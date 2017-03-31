@@ -1,0 +1,29 @@
+
+
+Tasklist:
+
+Make Gui for frontend StartActivity.xml reasonable
+-dropdown menues for the colour
+-on start there should be the standart programm(blue screen usw.)
+
+test package call of drawables
+
+create the other view classes
+
+adjust the algorithm class
+
+work on the error with the sound in Prototype1.0
+
+create the 3 package line with model view controll
+
+check input of the textfields
+
+create the class to do that
+
+create test for observing the view classes
+get the values from there into the controller class
+
+AdvancedOptions.class
+-change timer 
+(change sound)
+
