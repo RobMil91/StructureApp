@@ -62,9 +62,9 @@ import android.view.View;
         /**
          * canvas probably only works with points?!
          */
-        Point a = new Point(screenWidth / 2 - 100, screenHeight / 2);
-        Point b = new Point(screenWidth / 2, screenHeight / 2 - 100);
-        Point c = new Point(screenWidth / 2 - 100, screenHeight / 2);
+        Point a = new Point(screenWidth / 2 + 100, screenHeight / 2);
+        Point b = new Point(screenWidth / 2 - 100, screenHeight / 2);
+        Point c = new Point(screenWidth / 2, screenHeight / 2 + 100);
 
         //fill triangle
         Path path = new Path();
@@ -92,10 +92,10 @@ import android.view.View;
 
         //basic directions on where to draw the triangle!!
         //draw from vertex corner to top of the triangle
-        canvas.drawLine(screenWidth/2 - 100,screenHeight / 2,screenWidth/2,screenHeight/2 - 100, paintFrame);
+        canvas.drawLine(screenWidth/2 - 100,screenHeight / 2,screenWidth/2,screenHeight/2 + 100, paintFrame);
 
         //draw from top of triangle to the right line
-        canvas.drawLine(screenWidth/2 + 100,screenHeight / 2,screenWidth/2,screenHeight/2 - 100, paintFrame);
+        canvas.drawLine(screenWidth/2 + 100,screenHeight / 2,screenWidth/2,screenHeight/2 + 100, paintFrame);
 
 
 

@@ -1,8 +1,12 @@
 package com.example.robin.structurestart.control;
 
+import java.util.logging.Handler;
+
 /**
- * Created by robin on 01.04.17.
+ * Class to switch the images
  */
 
 public class ImageSwitch {
+
+    Handler handler;
 }
