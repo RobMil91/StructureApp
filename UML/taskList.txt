@@ -5,6 +5,7 @@ Tasklist:
 Make Gui for frontend StartActivity.xml reasonable
 -dropdown menues for the colour
 -on start there should be the standart programm(blue screen usw.)
+-recreate the triangles shape like the ones in the presentation
 
 test package call of drawables
 
