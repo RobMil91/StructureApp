@@ -17,12 +17,14 @@ import java.util.logging.Handler;
 public class RunActivity extends AppCompatActivity {
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
 
-        ViewLightUp viewLightUp = new ViewLightUp(this);
+      final  ViewLightUp viewLightUp = new ViewLightUp(this);
 
         setContentView(viewLightUp);
         sequenzeStart();
@@ -33,7 +35,9 @@ public class RunActivity extends AppCompatActivity {
 
     private void sequenzeStart() {
 
-        Handler hans;
+
+      final  ViewLightUp viewLightUp = new ViewLightUp(this);
+       final ViewLightDown viewLightDown = new ViewLightDown(this);
 
 
         final Runnable triaLightDown = new TimerTask() {
@@ -45,7 +49,7 @@ public class RunActivity extends AppCompatActivity {
                     public void run() {
 
 
-                        //tooo
+                        setContentView(viewLightDown);
                     }
                 });
 
@@ -62,14 +66,28 @@ public class RunActivity extends AppCompatActivity {
                     @Override
                     public void run() {
 
-                       //todo
+                        setContentView(viewLightUp);
+
+
                     }
                 });
             }
         };
 
-        ViewLightDown viewLightDown = new ViewLightDown(this);
-        setContentView(viewLightDown);
-    }
+        android.os.Handler hans = new android.os.Handler();
+
+        int systemTime = 0;
+
+
+        int time = 0;
+        do {
+
+
+            hans.postDelayed(triaLightDown, 5000);
+            systemTime= systemTime + 5000;
+
+        }while(systemTime < 5000);
+
+        }
 
 }
