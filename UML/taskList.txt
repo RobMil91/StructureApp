@@ -27,4 +27,5 @@ get the values from there into the controller class
 AdvancedOptions.class
 -change timer 
 (change sound)
+-change triangle size
 
