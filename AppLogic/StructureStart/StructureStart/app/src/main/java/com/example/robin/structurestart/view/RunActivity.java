@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.example.robin.structurestart.R;
+import com.example.robin.structurestart.control.ImageSwitch;
 import com.example.robin.structurestart.model.viewclasses.ViewLightDown;
 import com.example.robin.structurestart.model.viewclasses.ViewLightUp;
 
@@ -17,6 +18,8 @@ import java.util.logging.Handler;
 public class RunActivity extends AppCompatActivity {
 
 
+    //class which is responsible for the switiching
+    ImageSwitch imageSwitch;
 
 
     @Override

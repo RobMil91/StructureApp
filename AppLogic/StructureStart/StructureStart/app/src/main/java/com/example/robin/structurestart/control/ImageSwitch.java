@@ -10,7 +10,7 @@ import java.util.logging.Handler;
  * Class to switch the images
  */
 
-public class ImageSwitch extends View {
+public class ImageSwitch{
 
    private android.os.Handler handler;
     private Model model;
@@ -30,7 +30,7 @@ public class ImageSwitch extends View {
      */
     public ImageSwitch(Model model, int entiretime, int lightUpTime, int pausetime, boolean sound, int soundKind) {
 
-        super(this);
+
 
     }
 
