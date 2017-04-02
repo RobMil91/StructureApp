@@ -17,6 +17,11 @@ public class Model {
 
     public Model (Color backgroundColor, Color lineColor, Color triangleColor, Color triangleLightColor, Boolean triangleFilled) {
 
+        this.backgroundColor = backgroundColor;
+        this.lineColor = lineColor;
+        this.triangleColor = triangleColor;
+        this. triangleLightColor = triangleLightColor;
+        this.triangleFilled = triangleFilled;
 
     }
 

@@ -9,6 +9,7 @@ import android.view.View;
 
 import com.example.robin.structurestart.R;
 import com.example.robin.structurestart.control.ImageSwitch;
+import com.example.robin.structurestart.model.viewclasses.TriangleDown;
 import com.example.robin.structurestart.model.viewclasses.ViewLightDown;
 import com.example.robin.structurestart.model.viewclasses.ViewLightUp;
 
@@ -41,6 +42,7 @@ public class RunActivity extends AppCompatActivity {
 
       final  ViewLightUp viewLightUp = new ViewLightUp(this);
        final ViewLightDown viewLightDown = new ViewLightDown(this);
+        final TriangleDown viewtriangleDown = new TriangleDown(this);
 
 
         final Runnable triaLightDown = new TimerTask() {
@@ -77,6 +79,22 @@ public class RunActivity extends AppCompatActivity {
             }
         };
 
+        final   Runnable triangleDown = new TimerTask() {
+            @Override
+            public void run() {
+
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        setContentView(viewtriangleDown);
+
+
+                    }
+                });
+            }
+        };
+
         android.os.Handler hans = new android.os.Handler();
 
         int systemTime = 0;
@@ -86,7 +104,7 @@ public class RunActivity extends AppCompatActivity {
         do {
 
 
-            hans.postDelayed(triaLightDown, 5000);
+            hans.postDelayed(triangleDown, 5000);
             systemTime= systemTime + 5000;
 
         }while(systemTime < 5000);

@@ -14,14 +14,14 @@ import android.view.View;
  *
  */
 //realy need to set it public???
- public class ViewLightUp extends View {
+ public class TriangleDown extends View {
 
 
     /**
      * Super class constructor from view
      * @param context
      */
-    public ViewLightUp(Context context) {
+    public TriangleDown(Context context) {
         super(context);
     }
 
@@ -46,7 +46,7 @@ import android.view.View;
         Paint paintFill = new Paint();
         Paint paintFrame = new Paint();
 
-        paintBackground.setColor(Color.BLACK);
+        paintBackground.setColor(Color.WHITE);
         //print background
         canvas.drawPaint(paintBackground);
 
@@ -62,10 +62,13 @@ import android.view.View;
         /**
          * canvas probably only works with points?!
          */
-        Point a = new Point(screenWidth / 2 - 100, screenHeight / 2);
-        Point b = new Point(screenWidth / 2, screenHeight / 2 - 100);
-        Point c = new Point(screenWidth / 2 + 100, screenHeight / 2);
+        Point a = new Point(screenWidth / 2 + 100, screenHeight / 2);
+        Point b = new Point(screenWidth / 2 - 100, screenHeight / 2);
+        Point c = new Point(screenWidth / 2, screenHeight / 2 + 100);
 
+        Point d = new Point(screenWidth / 2 + 90, screenHeight / 2 + 10);
+        Point e = new Point(screenWidth / 2 - 90, screenHeight / 2 + 10);
+        Point f = new Point(screenWidth / 2 - 10, screenHeight / 2 + 90);
         //fill triangle
         Path path = new Path();
         path.setFillType(Path.FillType.EVEN_ODD);
@@ -73,9 +76,22 @@ import android.view.View;
         path.lineTo(b.x, b.y);
         path.lineTo(c.x, c.y);
         path.lineTo(a.x, a.y);
+
+        path.moveTo(d.x,d.y);
+        path.lineTo(e.x, e.y);
+        path.lineTo(f.x, f.y);
+        path.lineTo(d.x, d.y);
         path.close();
 
         canvas.drawPath(path, paintFill);
+
+
+
+        Path pathInner = new Path();
+        path.setFillType(Path.FillType.EVEN_ODD);
+
+
+
 
 
 
@@ -92,10 +108,10 @@ import android.view.View;
 
         //basic directions on where to draw the triangle!!
         //draw from vertex corner to top of the triangle
-        canvas.drawLine(screenWidth/2 - 100,screenHeight / 2,screenWidth/2,screenHeight/2 - 100, paintFrame);
+        canvas.drawLine(screenWidth/2 - 100,screenHeight / 2,screenWidth/2,screenHeight/2 + 100, paintFrame);
 
         //draw from top of triangle to the right line
-        canvas.drawLine(screenWidth/2 + 100,screenHeight / 2,screenWidth/2,screenHeight/2 - 100, paintFrame);
+        canvas.drawLine(screenWidth/2 + 100,screenHeight / 2,screenWidth/2,screenHeight/2 + 100, paintFrame);
 
 
 
