@@ -29,3 +29,4 @@ AdvancedOptions.class
 (change sound)
 -change triangle size
 
+triangle classes have to be sorted in more methods!

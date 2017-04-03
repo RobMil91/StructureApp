@@ -52,7 +52,7 @@ this.runImg = runImg;
      final TriangleDown viewtriangleDown = new TriangleDown(runImg);
 
 
-     final Runnable triaLightDown = new TimerTask() {
+     final Runnable triaLightDown = new Runnable() {
       @Override
       public void run() {
 
@@ -70,7 +70,7 @@ this.runImg = runImg;
 
 
 
-     final   Runnable triaLightUp = new TimerTask() {
+     final   Runnable triaLightUp = new Runnable() {
       @Override
       public void run() {
 
@@ -86,7 +86,7 @@ this.runImg = runImg;
       }
      };
 
-     final   Runnable triangleDown = new TimerTask() {
+     final   Runnable triangleDown = new Runnable() {
       @Override
       public void run() {
 

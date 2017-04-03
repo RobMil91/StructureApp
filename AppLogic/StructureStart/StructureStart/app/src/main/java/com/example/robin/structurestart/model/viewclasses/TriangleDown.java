@@ -110,9 +110,13 @@ import android.view.View;
         //draw from vertex corner to top of the triangle
         canvas.drawLine(screenWidth/2 - 100,screenHeight / 2,screenWidth/2,screenHeight/2 + 100, paintFrame);
 
+
+
         //draw from top of triangle to the right line
         canvas.drawLine(screenWidth/2 + 100,screenHeight / 2,screenWidth/2,screenHeight/2 + 100, paintFrame);
 
+    //draw inner traingle left to top
+        canvas.drawLine(screenWidth/2 - 100,screenHeight / 2,screenWidth/2,screenHeight/2 + 100, paintFrame);
 
 
     }
