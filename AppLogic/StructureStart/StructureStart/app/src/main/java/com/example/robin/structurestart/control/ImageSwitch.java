@@ -18,6 +18,7 @@ import java.util.logging.Handler;
 public class ImageSwitch{
 
    private android.os.Handler handler;
+ //Use to get the images!
     private Model model;
     private int entiretime;
     private int lightUpTime;
