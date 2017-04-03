@@ -28,5 +28,6 @@ AdvancedOptions.class
 -change timer 
 (change sound)
 -change triangle size
+-only horizontal?
 
 triangle classes have to be sorted in more methods!
