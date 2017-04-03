@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     public void hitButton(View v) {
 
         Intent intent = new Intent(this, RunActivity.class);
-        Button buttonInLayout = (Button)(findViewById(R.id.button));
+        Button buttonInLayout = (Button)(findViewById(R.id.buttonStart));
 
 
 /*get entire duration 1
