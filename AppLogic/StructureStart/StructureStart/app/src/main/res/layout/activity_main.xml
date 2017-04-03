@@ -64,9 +64,10 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/Options"
+            android:id="@+id/buttonOptions"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="hitOption"
             android:text="Options" />
 
         <Button

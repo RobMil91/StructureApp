@@ -22,7 +22,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".view.OptionsActivity"
-            android:label="@string/title_activity_options"></activity>
+            android:label="@string/title_activity_options" />
+        <activity android:name=".view.OptionsAcitvity"></activity>
     </application>
 
 </manifest>

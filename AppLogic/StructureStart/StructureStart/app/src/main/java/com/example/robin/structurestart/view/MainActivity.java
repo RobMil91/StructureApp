@@ -52,4 +52,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
+
+    public void hitOption(View v) {
+        Intent intent = new Intent(this, OptionsAcitvity.class);
+        Button buttonInLayout = (Button)(findViewById(R.id.buttonOptions));
+        startActivity(intent);
+
+
+    }
 }
