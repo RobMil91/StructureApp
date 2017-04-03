@@ -18,14 +18,13 @@
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
-            <EditText
-                android:id="@+id/editText4"
-                android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Dauer" />
+                android:text="Dauer"
+                android:textAppearance="@style/TextAppearance.AppCompat.Button" />
 
             <EditText
                 android:id="@+id/editText3"
@@ -53,12 +52,18 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/Options"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Options" />
+
+        <Button
+            android:id="@+id/Start"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:elevation="0dp"
-            android:text="Start"
-            android:onClick="hitButton"/>
+            android:onClick="hitButton"
+            android:text="Start" />
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
