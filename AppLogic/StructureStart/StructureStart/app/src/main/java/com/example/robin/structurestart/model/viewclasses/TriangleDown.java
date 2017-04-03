@@ -53,11 +53,13 @@ import android.view.View;
         /**
          * making the frame for the triangle additions
          */
-        paintFill.setStrokeWidth(4);
+        paintFill.setStrokeWidth(20);
         paintFill.setColor(Color.YELLOW);
-        paintFill.setStyle(Paint.Style.FILL_AND_STROKE);
+     //   paintFill.setStyle(Paint.Style.FILL_AND_STROKE);
+
         //the hell why? what is this?
-        paintFill.setAntiAlias(true);
+     //   paintFill.setAntiAlias(true);
+
 
         /**
          * canvas probably only works with points?!
@@ -71,16 +73,17 @@ import android.view.View;
         Point f = new Point(screenWidth / 2 - 10, screenHeight / 2 + 90);
         //fill triangle
         Path path = new Path();
-        path.setFillType(Path.FillType.EVEN_ODD);
+     //   path.setFillType(Path.FillType.EVEN_ODD);
+
         path.moveTo(a.x,a.y);
         path.lineTo(b.x, b.y);
         path.lineTo(c.x, c.y);
         path.lineTo(a.x, a.y);
-
+/*
         path.moveTo(d.x,d.y);
         path.lineTo(e.x, e.y);
         path.lineTo(f.x, f.y);
-        path.lineTo(d.x, d.y);
+        path.lineTo(d.x, d.y); */
         path.close();
 
         canvas.drawPath(path, paintFill);
