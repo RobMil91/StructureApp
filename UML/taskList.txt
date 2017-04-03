@@ -29,5 +29,5 @@ AdvancedOptions.class
 (change sound)
 -change triangle size
 -only horizontal?
-
+-verhältnis up down
 triangle classes have to be sorted in more methods!
