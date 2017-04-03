@@ -9,6 +9,7 @@ import android.view.View;
 
 import com.example.robin.structurestart.R;
 import com.example.robin.structurestart.control.ImageSwitch;
+import com.example.robin.structurestart.model.Model;
 import com.example.robin.structurestart.model.viewclasses.TriangleDown;
 import com.example.robin.structurestart.model.viewclasses.ViewLightDown;
 import com.example.robin.structurestart.model.viewclasses.ViewLightUp;
@@ -21,22 +22,25 @@ public class RunActivity extends AppCompatActivity {
 
     //class which is responsible for the switiching
     ImageSwitch imageSwitch;
-
+    Model model;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
 
+        //just test stub
+        imageSwitch = new ImageSwitch(this,model, 100, 100 , 100, true, 100);
       final  ViewLightUp viewLightUp = new ViewLightUp(this);
 
         setContentView(viewLightUp);
-        sequenzeStart();
+       // sequenzeStart();
+        imageSwitch.seqeunzstart();
 
     }
 
 
-
+/*
     private void sequenzeStart() {
 
 
@@ -110,5 +114,5 @@ public class RunActivity extends AppCompatActivity {
         }while(systemTime < 5000);
 
         }
-
+*/
 }
