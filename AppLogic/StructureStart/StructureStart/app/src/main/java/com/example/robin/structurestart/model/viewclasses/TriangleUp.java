@@ -10,7 +10,9 @@ import android.view.View;
 
 /**
  * Example View Class in a package
- *
+ * Carefull!!! the heights and lengths are aproximated for
+ * this exact example adjusting to bigger size might not work
+ * easily
  *
  */
 //realy need to set it public???
@@ -76,13 +78,13 @@ import android.view.View;
         path.lineTo(b.x, b.y);
         path.lineTo(c.x, c.y);
         path.lineTo(a.x, a.y);
-
+/*
         path.moveTo(d.x,d.y);
         path.lineTo(e.x, e.y);
         path.lineTo(f.x, f.y);
         path.lineTo(d.x, d.y);
         path.close();
-
+*/
         canvas.drawPath(path, paintFill);
 
 
@@ -108,24 +110,29 @@ import android.view.View;
 
         //basic directions on where to draw the triangle!!
         //draw from vertex corner to top of the triangle
-        canvas.drawLine(screenWidth/2 - 100,screenHeight / 2,screenWidth/2,screenHeight/2 + 100, paintFrame);
+        canvas.drawLine(screenWidth/2 - 100,screenHeight / 2,screenWidth/2,screenHeight/2 - 100, paintFrame);
 
 
 
         //draw from top of triangle to the right line
-        canvas.drawLine(screenWidth/2 + 100,screenHeight / 2,screenWidth/2,screenHeight/2 + 100, paintFrame);
+        canvas.drawLine(screenWidth/2 + 100,screenHeight / 2,screenWidth/2,screenHeight/2 - 100, paintFrame);
 
 
 
-    //draw outer traingle left to top
-        //draw line from a' to b'
-        canvas.drawLine(screenWidth/2 - 110,screenHeight / 2 + 10, screenWidth/2, screenHeight/2 + 80, paintFrame);
 
-    //    canvas.drawLine(screenWidth/2 + 60,screenHeight / 2 + 10,screenWidth/2, screenHeight/2 + 80, paintFrame);
+
+
+
+    //draw inner traingle left to top
+        //draw line from a' to c'
+        canvas.drawLine(screenWidth/2 - 75,screenHeight / 2 - 10, screenWidth/2, screenHeight/2 - 85, paintFrame);
+
+        //draw from b' to c'
+        canvas.drawLine(screenWidth/2 + 75,screenHeight / 2 - 10,screenWidth/2, screenHeight/2 - 85, paintFrame);
 
 
         //draw inner ground line
-        canvas.drawLine(screenWidth/2 - 60,screenHeight / 2 + 10,screenWidth/2 + 60,screenHeight / 2 + 10, paintFrame);
+        canvas.drawLine(screenWidth/2 - 75,screenHeight / 2 - 10, screenWidth/2 + 75,screenHeight / 2 - 10,paintFrame);
 
     }
 
