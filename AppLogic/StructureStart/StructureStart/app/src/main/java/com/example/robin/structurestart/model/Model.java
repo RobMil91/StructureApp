@@ -9,12 +9,23 @@ import android.view.View;
 
 public class Model {
 
+    /**
+     * Initiating Variables
+     */
     private Color backgroundColor;
     private  Color lineColor;
     private  Color triangleColor;
     private   Color triangleLightColor;
     private   Boolean triangleFilled;
 
+    /**
+     *
+     * @param backgroundColor Color of the background
+     * @param lineColor color of the lines
+     * @param triangleColor color of the
+     * @param triangleLightColor
+     * @param triangleFilled
+     */
     public Model (Color backgroundColor, Color lineColor, Color triangleColor, Color triangleLightColor, Boolean triangleFilled) {
 
         this.backgroundColor = backgroundColor;

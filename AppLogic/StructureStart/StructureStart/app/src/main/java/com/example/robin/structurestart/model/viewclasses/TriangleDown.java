@@ -57,6 +57,7 @@ import android.view.View;
          */
         paintFill.setStrokeWidth(4);
         paintFill.setColor(Color.YELLOW);
+        //change to FILL and STROKE for make the triangle full
         paintFill.setStyle(Paint.Style.FILL);
         //the hell why? what is this?
         paintFill.setAntiAlias(true);

@@ -7,6 +7,7 @@ import com.example.robin.structurestart.control.ImageSwitch;
 import com.example.robin.structurestart.model.Model;
 import com.example.robin.structurestart.model.viewclasses.TriangleDown;
 import com.example.robin.structurestart.model.viewclasses.TriangleUp;
+import com.example.robin.structurestart.model.viewclasses.ViewEmpty;
 
 public class RunActivity extends AppCompatActivity {
 
@@ -26,7 +27,8 @@ public class RunActivity extends AppCompatActivity {
         final TriangleUp viewTriangleUp = new TriangleUp(this);
         final TriangleDown viewTriangleDown = new TriangleDown(this);
 
-        setContentView(viewTriangleDown);
+        final ViewEmpty viewEmpty = new ViewEmpty(this);
+        setContentView(viewEmpty);
        // sequenzeStart();
         //for testing of image not included
        // imageSwitch.seqeunzstart();
