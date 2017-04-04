@@ -53,10 +53,11 @@ public class Model {
     }
 
     public void colorViews() {
-
+/*
    Paint testPaint = new Paint();
         testPaint.setColor(100);
-
+        testPaint.setARGB(1,255,0,255);
+*/
 
     }
 
