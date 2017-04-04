@@ -57,7 +57,7 @@ import android.view.View;
          */
         paintFill.setStrokeWidth(4);
         paintFill.setColor(Color.YELLOW);
-        paintFill.setStyle(Paint.Style.FILL_AND_STROKE);
+      //  paintFill.setStyle(Paint.Style.FILL_AND_STROKE);
         //the hell why? what is this?
         paintFill.setAntiAlias(true);
 
@@ -68,17 +68,20 @@ import android.view.View;
         Point b = new Point(screenWidth / 2 + 100, screenHeight / 2);
         Point c = new Point(screenWidth / 2, screenHeight / 2 - 100);
 
-        Point d = new Point(screenWidth/2 - 75,screenHeight / 2 - 10);
-        Point e = new Point(screenWidth/2 + 75,screenHeight / 2 - 10);
-        Point f = new Point(screenWidth /  2, screenHeight / 2 - 85);
 
-        //fill triangle
+
+        //path for triangle
         Path path = new Path();
         path.setFillType(Path.FillType.EVEN_ODD);
         path.moveTo(a.x,a.y);
         path.lineTo(b.x, b.y);
         path.lineTo(c.x, c.y);
         path.lineTo(a.x, a.y);
+
+        //points of inner triangle
+        Point d = new Point(screenWidth/2 - 75,screenHeight / 2 - 10);
+        Point e = new Point(screenWidth/2 + 75,screenHeight / 2 - 10);
+        Point f = new Point(screenWidth /  2, screenHeight / 2 - 85);
 
         //inner triangle with d e f instead of a' b' c'
         path.moveTo(d.x,d.y);
