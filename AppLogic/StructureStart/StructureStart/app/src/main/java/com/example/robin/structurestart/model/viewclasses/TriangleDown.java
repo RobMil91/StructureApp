@@ -62,8 +62,8 @@ import android.view.View;
         /**
          * canvas probably only works with points?!
          */
-        Point a = new Point(screenWidth / 2 + 100, screenHeight / 2);
-        Point b = new Point(screenWidth / 2 - 100, screenHeight / 2);
+        Point a = new Point(screenWidth / 2 - 100, screenHeight / 2);
+        Point b = new Point(screenWidth / 2 + 100, screenHeight / 2);
         Point c = new Point(screenWidth / 2, screenHeight / 2 + 100);
 
         Point d = new Point(screenWidth / 2 + 90, screenHeight / 2 + 10);
@@ -117,10 +117,11 @@ import android.view.View;
 
 
 
-    //draw inner traingle left to top
-        canvas.drawLine(screenWidth/2 - 60,screenHeight / 2 + 10, screenWidth/2, screenHeight/2 + 80, paintFrame);
+    //draw outer traingle left to top
+        //draw line from a' to b'
+        canvas.drawLine(screenWidth/2 - 110,screenHeight / 2 + 10, screenWidth/2, screenHeight/2 + 80, paintFrame);
 
-        canvas.drawLine(screenWidth/2 + 60,screenHeight / 2 + 10,screenWidth/2, screenHeight/2 + 80, paintFrame);
+    //    canvas.drawLine(screenWidth/2 + 60,screenHeight / 2 + 10,screenWidth/2, screenHeight/2 + 80, paintFrame);
 
 
         //draw inner ground line
