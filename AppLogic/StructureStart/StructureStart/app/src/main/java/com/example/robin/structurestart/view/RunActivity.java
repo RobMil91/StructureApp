@@ -11,6 +11,7 @@ import com.example.robin.structurestart.R;
 import com.example.robin.structurestart.control.ImageSwitch;
 import com.example.robin.structurestart.model.Model;
 import com.example.robin.structurestart.model.viewclasses.TriangleDown;
+import com.example.robin.structurestart.model.viewclasses.TriangleUp;
 import com.example.robin.structurestart.model.viewclasses.ViewLightDown;
 import com.example.robin.structurestart.model.viewclasses.ViewLightUp;
 
@@ -31,11 +32,13 @@ public class RunActivity extends AppCompatActivity {
 
         //just test stub
         imageSwitch = new ImageSwitch(this,model, 100, 100 , 100, true, 100);
-      final  ViewLightUp viewLightUp = new ViewLightUp(this);
+    //  final  ViewLightUp viewLightUp = new ViewLightUp(this);
+        final TriangleUp viewTriangleUp = new TriangleUp(this);
 
-        setContentView(viewLightUp);
+        setContentView(viewTriangleUp);
        // sequenzeStart();
-        imageSwitch.seqeunzstart();
+        //for testing of image not included
+       // imageSwitch.seqeunzstart();
 
     }
 

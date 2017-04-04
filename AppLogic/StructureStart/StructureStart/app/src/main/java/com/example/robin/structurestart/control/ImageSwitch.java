@@ -103,6 +103,22 @@ this.runImg = runImg;
       }
      };
 
+        final   Runnable triangleUp = new Runnable() {
+            @Override
+            public void run() {
+
+                runImg.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        runImg.setContentView(viewtriangleDown);
+
+
+                    }
+                });
+            }
+        };
+
      android.os.Handler hans = new android.os.Handler();
 
      int systemTime = 0;
