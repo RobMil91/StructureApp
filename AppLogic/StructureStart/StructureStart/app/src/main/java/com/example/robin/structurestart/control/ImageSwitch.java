@@ -1,15 +1,10 @@
 package com.example.robin.structurestart.control;
 
-import android.view.View;
-
 import com.example.robin.structurestart.model.Model;
 import com.example.robin.structurestart.model.viewclasses.TriangleDown;
 import com.example.robin.structurestart.model.viewclasses.ViewLightDown;
 import com.example.robin.structurestart.model.viewclasses.ViewLightUp;
 import com.example.robin.structurestart.view.RunActivity;
-
-import java.util.TimerTask;
-import java.util.logging.Handler;
 
 /**
  * Class to switch the images

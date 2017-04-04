@@ -1,22 +1,12 @@
 package com.example.robin.structurestart.view;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
 
-import com.example.robin.structurestart.R;
 import com.example.robin.structurestart.control.ImageSwitch;
 import com.example.robin.structurestart.model.Model;
 import com.example.robin.structurestart.model.viewclasses.TriangleDown;
 import com.example.robin.structurestart.model.viewclasses.TriangleUp;
-import com.example.robin.structurestart.model.viewclasses.ViewLightDown;
-import com.example.robin.structurestart.model.viewclasses.ViewLightUp;
-
-import java.util.TimerTask;
-import java.util.logging.Handler;
 
 public class RunActivity extends AppCompatActivity {
 
@@ -34,8 +24,9 @@ public class RunActivity extends AppCompatActivity {
         imageSwitch = new ImageSwitch(this,model, 100, 100 , 100, true, 100);
     //  final  ViewLightUp viewLightUp = new ViewLightUp(this);
         final TriangleUp viewTriangleUp = new TriangleUp(this);
+        final TriangleDown viewTriangleDown = new TriangleDown(this);
 
-        setContentView(viewTriangleUp);
+        setContentView(viewTriangleDown);
        // sequenzeStart();
         //for testing of image not included
        // imageSwitch.seqeunzstart();
