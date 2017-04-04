@@ -31,9 +31,10 @@ public class RunActivity extends AppCompatActivity {
 
         Paint paintBackground = new Paint();
         paintBackground.setColor(Color.BLUE);
-        Paint paintFill = new Paint(Color.RED);
-        Paint paintFrame = new Paint(Color.BLACK);
-
+        Paint paintFill = new Paint();
+        paintFill.setColor(Color.RED);
+        Paint paintFrame = new Paint();
+        paintFrame.setColor(Color.BLACK);
 
 
         final TriangleDown viewTriangleDown = new TriangleDown(this, paintBackground, paintFrame, paintFill, paintFill, false);
