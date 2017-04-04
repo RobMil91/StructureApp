@@ -2,6 +2,7 @@ package com.example.robin.structurestart.control;
 
 import com.example.robin.structurestart.model.Model;
 import com.example.robin.structurestart.model.viewclasses.TriangleDown;
+import com.example.robin.structurestart.model.viewclasses.TriangleUp;
 import com.example.robin.structurestart.model.viewclasses.ViewLightDown;
 import com.example.robin.structurestart.model.viewclasses.ViewLightUp;
 import com.example.robin.structurestart.view.RunActivity;
@@ -45,7 +46,8 @@ this.runImg = runImg;
 
      final ViewLightUp viewLightUp = new ViewLightUp(runImg);
      final ViewLightDown viewLightDown = new ViewLightDown(runImg);
-     final TriangleDown viewtriangleDown = new TriangleDown(runImg);
+        //just for testing!
+    // final TriangleDown viewtriangleDown = new TriangleDown(runImg);
 
 
      final Runnable triaLightDown = new Runnable() {
@@ -89,8 +91,8 @@ this.runImg = runImg;
        runImg.runOnUiThread(new Runnable() {
         @Override
         public void run() {
-
-         runImg.setContentView(viewtriangleDown);
+//just for testing
+       //  runImg.setContentView(viewtriangleDown);
 
 
         }
@@ -106,7 +108,7 @@ this.runImg = runImg;
                     @Override
                     public void run() {
 
-                        runImg.setContentView(viewtriangleDown);
+                    //    runImg.setContentView(TriangleUp);
 
 
                     }

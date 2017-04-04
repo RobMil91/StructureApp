@@ -1,5 +1,7 @@
 package com.example.robin.structurestart.view;
 
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
@@ -25,10 +27,20 @@ public class RunActivity extends AppCompatActivity {
         imageSwitch = new ImageSwitch(this,model, 100, 100 , 100, true, 100);
     //  final  ViewLightUp viewLightUp = new ViewLightUp(this);
         final TriangleUp viewTriangleUp = new TriangleUp(this);
-        final TriangleDown viewTriangleDown = new TriangleDown(this);
+
+
+        Paint paintBackground = new Paint();
+        paintBackground.setColor(Color.BLUE);
+        Paint paintFill = new Paint(Color.RED);
+        Paint paintFrame = new Paint(Color.BLACK);
+
+
+
+        final TriangleDown viewTriangleDown = new TriangleDown(this, paintBackground, paintFrame, paintFill, paintFill, false);
 
         final ViewEmpty viewEmpty = new ViewEmpty(this);
-        setContentView(viewEmpty);
+
+        setContentView(viewTriangleDown);
        // sequenzeStart();
         //for testing of image not included
        // imageSwitch.seqeunzstart();

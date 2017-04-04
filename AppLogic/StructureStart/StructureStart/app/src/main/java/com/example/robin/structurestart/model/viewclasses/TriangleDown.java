@@ -19,12 +19,28 @@ import android.view.View;
  public class TriangleDown extends View {
 
 
+    private Paint backgroundPaint;
+    private Paint lineColor;
+    private Paint triangleColor;
+    private Paint triangleLightColor;
+    private Boolean triangleFilled;
+
     /**
      * Super class constructor from view
      * @param context
      */
-    public TriangleDown(Context context) {
+    public TriangleDown(Context context, Paint backgroundPaint, Paint lineColor, Paint triangleColor, Paint triangleLightColor, Boolean triangleFilled) {
         super(context);
+
+        this.backgroundPaint = backgroundPaint;
+
+
+        this.lineColor = lineColor;
+        this.triangleColor = triangleColor;
+        this.triangleFilled = triangleFilled;
+        this.triangleLightColor = triangleLightColor;
+
+
     }
 
 
@@ -44,13 +60,15 @@ import android.view.View;
         int screenHeight = canvas.getHeight();
 
         //init paint
-        Paint paintBackground = new Paint();
+    //    Paint paintBackground = new Paint(Color.BLACK);
         Paint paintFill = new Paint();
         Paint paintFrame = new Paint();
 
-        paintBackground.setColor(Color.WHITE);
+      //  paintBackground.setColor(Color.WHITE);
         //print background
-        canvas.drawPaint(paintBackground);
+        canvas.drawPaint(this.backgroundPaint);
+
+
 
         /**
          * making the frame for the triangle additions
@@ -58,7 +76,24 @@ import android.view.View;
         paintFill.setStrokeWidth(4);
         paintFill.setColor(Color.YELLOW);
         //change to FILL and STROKE for make the triangle full
-        paintFill.setStyle(Paint.Style.FILL);
+        if (triangleFilled) {
+            paintFill.setStyle(Paint.Style.FILL_AND_STROKE);
+
+
+        } else {
+            paintFill.setStyle(Paint.Style.FILL);
+            //draw inner traingle left to top
+            //draw line from a' to c'
+            canvas.drawLine(screenWidth/2 - 75,screenHeight / 2 + 10, screenWidth/  2, screenHeight/2 + 85, paintFrame);
+
+            //draw from b' to c'
+            canvas.drawLine(screenWidth/2 + 75,screenHeight / 2 + 10, screenWidth / 2, screenHeight/2 + 85, paintFrame);
+
+
+            //draw inner ground line
+            canvas.drawLine(screenWidth / 2 - 75,screenHeight / 2 + 10, screenWidth / 2 + 75,screenHeight / 2 + 10,paintFrame);
+        }
+
         //the hell why? what is this?
         paintFill.setAntiAlias(true);
 
@@ -127,16 +162,7 @@ import android.view.View;
 
 
 
-    //draw inner traingle left to top
-        //draw line from a' to c'
-        canvas.drawLine(screenWidth/2 - 75,screenHeight / 2 + 10, screenWidth/  2, screenHeight/2 + 85, paintFrame);
 
-        //draw from b' to c'
-        canvas.drawLine(screenWidth/2 + 75,screenHeight / 2 + 10, screenWidth / 2, screenHeight/2 + 85, paintFrame);
-
-
-        //draw inner ground line
-        canvas.drawLine(screenWidth / 2 - 75,screenHeight / 2 + 10, screenWidth / 2 + 75,screenHeight / 2 + 10,paintFrame);
 
     }
 
