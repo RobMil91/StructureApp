@@ -67,7 +67,7 @@ import android.view.View;
       //  paintBackground.setColor(Color.WHITE);
         //print background
         canvas.drawPaint(this.backgroundPaint);
-        
+
 
 
         //starting to draw frame!
