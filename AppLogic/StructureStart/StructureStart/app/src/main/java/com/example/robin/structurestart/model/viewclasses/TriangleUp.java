@@ -68,9 +68,10 @@ import android.view.View;
         Point b = new Point(screenWidth / 2 + 100, screenHeight / 2);
         Point c = new Point(screenWidth / 2, screenHeight / 2 - 100);
 
-        Point d = new Point(screenWidth / 2 + 90, screenHeight / 2 + 10);
-        Point e = new Point(screenWidth / 2 - 90, screenHeight / 2 + 10);
-        Point f = new Point(screenWidth / 2 - 10, screenHeight / 2 + 90);
+        Point d = new Point(screenWidth/2 - 75,screenHeight / 2 - 10);
+        Point e = new Point(screenWidth/2 + 75,screenHeight / 2 - 10);
+        Point f = new Point(screenWidth /  2, screenHeight / 2 - 85);
+
         //fill triangle
         Path path = new Path();
         path.setFillType(Path.FillType.EVEN_ODD);
@@ -78,19 +79,18 @@ import android.view.View;
         path.lineTo(b.x, b.y);
         path.lineTo(c.x, c.y);
         path.lineTo(a.x, a.y);
-/*
+
+        //inner triangle with d e f instead of a' b' c'
         path.moveTo(d.x,d.y);
         path.lineTo(e.x, e.y);
         path.lineTo(f.x, f.y);
         path.lineTo(d.x, d.y);
         path.close();
-*/
+
         canvas.drawPath(path, paintFill);
 
 
 
-        Path pathInner = new Path();
-        path.setFillType(Path.FillType.EVEN_ODD);
 
 
 
@@ -125,14 +125,14 @@ import android.view.View;
 
     //draw inner traingle left to top
         //draw line from a' to c'
-        canvas.drawLine(screenWidth/2 - 75,screenHeight / 2 - 10, screenWidth/2, screenHeight/2 - 85, paintFrame);
+        canvas.drawLine(screenWidth/2 - 75,screenHeight / 2 - 10, screenWidth/  2, screenHeight/2 - 85, paintFrame);
 
         //draw from b' to c'
-        canvas.drawLine(screenWidth/2 + 75,screenHeight / 2 - 10,screenWidth/2, screenHeight/2 - 85, paintFrame);
+        canvas.drawLine(screenWidth/2 + 75,screenHeight / 2 - 10, screenWidth / 2, screenHeight/2 - 85, paintFrame);
 
 
         //draw inner ground line
-        canvas.drawLine(screenWidth/2 - 75,screenHeight / 2 - 10, screenWidth/2 + 75,screenHeight / 2 - 10,paintFrame);
+        canvas.drawLine(screenWidth / 2 - 75,screenHeight / 2 - 10, screenWidth / 2 + 75,screenHeight / 2 - 10,paintFrame);
 
     }
 
