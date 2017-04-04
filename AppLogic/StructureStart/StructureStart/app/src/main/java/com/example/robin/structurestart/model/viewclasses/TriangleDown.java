@@ -2,7 +2,6 @@ package com.example.robin.structurestart.model.viewclasses;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Point;
@@ -25,20 +24,23 @@ import android.view.View;
     private Paint triangleLightPaint;
     private Boolean triangleFilled;
 
+
+
     /**
      * Super class constructor from view
      * @param context
      */
-    public TriangleDown(Context context, Paint backgroundPaint, Paint lineColor, Paint triangleColor, Paint triangleLightColor, Boolean triangleFilled) {
+    public TriangleDown(Context context, Paint backgroundPaint, Paint lineColor, Paint trianglePaint, Paint triangleLightColor, Boolean triangleFilled) {
         super(context);
 
         this.backgroundPaint = backgroundPaint;
 
 
         this.linePaint = lineColor;
-        this.trianglePaint = triangleColor;
+        this.trianglePaint = trianglePaint;
         this.triangleFilled = triangleFilled;
         this.triangleLightPaint = triangleLightColor;
+
 
 
     }

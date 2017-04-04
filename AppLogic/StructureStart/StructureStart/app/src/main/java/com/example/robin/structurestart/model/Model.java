@@ -38,11 +38,11 @@ public class Model {
      *
      * @param backgroundColor Color of the background
      * @param lineColor color of the lines
-     * @param triangleColor color of the
+     * @param triangleColorUp color of the
      * @param triangleLightColor
      * @param triangleFilled
      */
-    public Model (Color backgroundColor, Color lineColor, Color triangleColor, Color triangleLightColor, Boolean triangleFilled) {
+    public Model (Color backgroundColor, Color lineColor, Color triangleColorUp, Color triangleColorDown, Color triangleLightColor, Boolean triangleFilled) {
 
         this.backgroundColor = backgroundColor;
         this.lineColor = lineColor;

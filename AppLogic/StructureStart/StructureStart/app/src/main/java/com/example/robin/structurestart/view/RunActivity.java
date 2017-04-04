@@ -37,7 +37,8 @@ public class RunActivity extends AppCompatActivity {
         paintFrame.setColor(Color.BLACK);
 
 
-        final TriangleDown viewTriangleDown = new TriangleDown(this, paintBackground, paintFrame, paintFill, paintFill, false);
+        //testing instance
+        final TriangleDown viewTriangleDown = new TriangleDown(this, paintBackground, paintFrame, paintFill,paintFill, false);
 
         final ViewEmpty viewEmpty = new ViewEmpty(this);
 
