@@ -26,23 +26,24 @@ public class RunActivity extends AppCompatActivity {
         //just test stub
         imageSwitch = new ImageSwitch(this,model, 100, 100 , 100, true, 100);
     //  final  ViewLightUp viewLightUp = new ViewLightUp(this);
-        final TriangleUp viewTriangleUp = new TriangleUp(this);
+     //   final TriangleUp viewTriangleUp = new TriangleUp(this);
 
 
         Paint paintBackground = new Paint();
-        paintBackground.setColor(Color.BLUE);
+        paintBackground.setColor(Color.WHITE);
         Paint paintFill = new Paint();
-        paintFill.setColor(Color.RED);
+        paintFill.setColor(Color.BLUE);
         Paint paintFrame = new Paint();
         paintFrame.setColor(Color.BLACK);
 
 
         //testing instance
-        final TriangleDown viewTriangleDown = new TriangleDown(this, paintBackground, paintFrame,paintFill, false);
+      //  final TriangleDown viewTriangleDown = new TriangleDown(this, paintBackground, paintFrame,paintFill, false);
+        final TriangleUp viewTriangleUp = new TriangleUp(this, paintBackground, paintFrame,paintFill, false);
 
         final ViewEmpty viewEmpty = new ViewEmpty(this);
 
-        setContentView(viewTriangleDown);
+        setContentView(viewTriangleUp);
        // sequenzeStart();
         //for testing of image not included
        // imageSwitch.seqeunzstart();

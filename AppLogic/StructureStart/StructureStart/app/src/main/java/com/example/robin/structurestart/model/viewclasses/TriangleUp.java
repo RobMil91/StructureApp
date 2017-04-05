@@ -15,62 +15,98 @@ import android.view.View;
  * easily
  *
  */
-//realy need to set it public???
  public class TriangleUp extends View {
 
+    private Paint backgroundPaint;
+    private Paint linePaint;
+    private Paint trianglePaint;
+    private Boolean triangleFilled;
 
     /**
-     * Super class constructor from view
-     * @param context
+     *
+     * @param context usually this as in the running activity!
+     * @param backgroundPaint color of the background
+     * @param linePaint color of the lines
+     * @param trianglePaint color of the triangle
+     * @param triangleFilled boolean if the triangle should be filled
      */
-    public TriangleUp(Context context) {
+    public TriangleUp(Context context, Paint backgroundPaint, Paint linePaint, Paint trianglePaint, Boolean triangleFilled) {
         super(context);
+        this.backgroundPaint = backgroundPaint;
+        this.linePaint = linePaint;
+        this.trianglePaint = trianglePaint;
+        this.triangleFilled = triangleFilled;
     }
 
 
     @Override
     protected void onDraw(Canvas canvas) {
 
-
-        // call the super class onDraw Method
         super.onDraw(canvas);
 
-
-
-        /**
-         * get the view dimensions!
-         */
         int screenWidth = canvas.getWidth();
         int screenHeight = canvas.getHeight();
 
-        //init paint
-        Paint paintBackground = new Paint();
-        Paint paintFill = new Paint();
-        Paint paintFrame = new Paint();
+        //iniate the paints
+        linePaint.setStrokeWidth(4);
+        linePaint.setAntiAlias(true); //for smoothing edges!
 
-        paintBackground.setColor(Color.WHITE);
-        //print background
-        canvas.drawPaint(paintBackground);
+        //print the structures with paint
+        canvas.drawPaint(backgroundPaint);
 
-        /**
-         * making the frame for the triangle additions
-         */
-        paintFill.setStrokeWidth(4);
-        paintFill.setColor(Color.YELLOW);
-        paintFill.setStyle(Paint.Style.FILL);
-        //the hell why? what is this?
-        paintFill.setAntiAlias(true);
 
-        /**
-         * canvas probably only works with points?!
-         */
+
+        if (triangleFilled) {
+            trianglePaint.setStyle(Paint.Style.FILL_AND_STROKE);
+
+
+        } else {
+            trianglePaint.setStyle(Paint.Style.FILL);
+            drawInnerTriangle(canvas, screenHeight, screenWidth);
+
+        }
+
+        drawTriangleColor(canvas, screenHeight, screenWidth);
+
+        drawOuterFrame(canvas, screenHeight, screenWidth);
+
+    }
+
+    /**
+     * Draw inner triangle
+     * @param canvas from the onDraw Method
+     * @param screenHeight from the onDraw Method
+     * @param screenWidth from the onDraw Method
+     */
+    public void drawInnerTriangle(Canvas canvas, int screenHeight, int screenWidth) {
+        //draw inner traingle left to top
+        //draw line from a' to c'
+        canvas.drawLine(screenWidth/2 - 75,screenHeight / 2 - 10, screenWidth/  2, screenHeight/2 - 85, linePaint);
+        //draw from b' to c'
+        canvas.drawLine(screenWidth/2 + 75,screenHeight / 2 - 10, screenWidth / 2, screenHeight/2 - 85, linePaint);
+        //draw inner ground line
+        canvas.drawLine(screenWidth / 2 - 75,screenHeight / 2 - 10, screenWidth / 2 + 75,screenHeight / 2 - 10, linePaint);
+    }
+
+    /**
+     * Method for drawing the paint component of the triangle
+     * all method variables from onDraw() method
+     * @param canvas
+     * @param screenHeight
+     * @param screenWidth
+     */
+    public void drawTriangleColor(Canvas canvas, int screenHeight, int screenWidth) {
+
         Point a = new Point(screenWidth / 2 - 100, screenHeight / 2);
         Point b = new Point(screenWidth / 2 + 100, screenHeight / 2);
         Point c = new Point(screenWidth / 2, screenHeight / 2 - 100);
 
+        //points of inner triangle
+        Point d = new Point(screenWidth/2 - 75,screenHeight / 2 - 10);
+        Point e = new Point(screenWidth/2 + 75,screenHeight / 2 - 10);
+        Point f = new Point(screenWidth /  2, screenHeight / 2 - 85);
 
-
-        //path for triangle
+        //path for outer line triangle
         Path path = new Path();
         path.setFillType(Path.FillType.EVEN_ODD);
         path.moveTo(a.x,a.y);
@@ -78,64 +114,34 @@ import android.view.View;
         path.lineTo(c.x, c.y);
         path.lineTo(a.x, a.y);
 
-        //points of inner triangle
-        Point d = new Point(screenWidth/2 - 75,screenHeight / 2 - 10);
-        Point e = new Point(screenWidth/2 + 75,screenHeight / 2 - 10);
-        Point f = new Point(screenWidth /  2, screenHeight / 2 - 85);
-
-        //inner triangle with d e f instead of a' b' c'
+        //path for inner triangle with d e f instead of a' b' c'
         path.moveTo(d.x,d.y);
         path.lineTo(e.x, e.y);
         path.lineTo(f.x, f.y);
         path.lineTo(d.x, d.y);
         path.close();
 
-        canvas.drawPath(path, paintFill);
+        canvas.drawPath(path, trianglePaint);
+    }
 
-
-
-
-
-
-
-
-
-        //starting to draw frame!
-        paintFrame.setStrokeWidth(4);
-        paintFrame.setColor(Color.BLACK);
+    /**
+     * Draw the outer frame of the triangle
+     * all method variables from onDraw() method
+     * @param canvas
+     * @param screenHeight
+     * @param screenWidth
+     */
+    public void drawOuterFrame(Canvas canvas, int screenHeight, int screenWidth) {
 
 
         //draw from left to right till first vertex of triangle important!!!!!!!!
-        canvas.drawLine(0,screenHeight/2,screenWidth,screenHeight/2, paintFrame);
+        canvas.drawLine(0,screenHeight/2,screenWidth,screenHeight/2, linePaint);
 
-
-
-
-        //basic directions on where to draw the triangle!!
         //draw from vertex corner to top of the triangle
-        canvas.drawLine(screenWidth/2 - 100,screenHeight / 2,screenWidth/2,screenHeight/2 - 100, paintFrame);
-
-
+        canvas.drawLine(screenWidth/2 - 100,screenHeight / 2,screenWidth/2,screenHeight/2 - 100, linePaint);
 
         //draw from top of triangle to the right line
-        canvas.drawLine(screenWidth/2 + 100,screenHeight / 2,screenWidth/2,screenHeight/2 - 100, paintFrame);
-
-
-
-
-
-
-
-    //draw inner traingle left to top
-        //draw line from a' to c'
-        canvas.drawLine(screenWidth/2 - 75,screenHeight / 2 - 10, screenWidth/  2, screenHeight/2 - 85, paintFrame);
-
-        //draw from b' to c'
-        canvas.drawLine(screenWidth/2 + 75,screenHeight / 2 - 10, screenWidth / 2, screenHeight/2 - 85, paintFrame);
-
-
-        //draw inner ground line
-        canvas.drawLine(screenWidth / 2 - 75,screenHeight / 2 - 10, screenWidth / 2 + 75,screenHeight / 2 - 10,paintFrame);
+        canvas.drawLine(screenWidth/2 + 100,screenHeight / 2,screenWidth/2,screenHeight/2 - 100, linePaint);
 
     }
 
