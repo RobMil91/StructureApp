@@ -38,7 +38,7 @@ public class RunActivity extends AppCompatActivity {
 
 
         //testing instance
-        final TriangleDown viewTriangleDown = new TriangleDown(this, paintBackground, paintFrame, paintFill,paintFill, false);
+        final TriangleDown viewTriangleDown = new TriangleDown(this, paintBackground, paintFrame,paintFill, false);
 
         final ViewEmpty viewEmpty = new ViewEmpty(this);
 

@@ -21,7 +21,6 @@ import android.view.View;
     private Paint backgroundPaint;
     private Paint linePaint;
     private Paint trianglePaint;
-    private Paint triangleLightPaint;
     private Boolean triangleFilled;
 
 
@@ -30,16 +29,14 @@ import android.view.View;
      * Super class constructor from view
      * @param context
      */
-    public TriangleDown(Context context, Paint backgroundPaint, Paint lineColor, Paint trianglePaint, Paint triangleLightColor, Boolean triangleFilled) {
+    public TriangleDown(Context context, Paint backgroundPaint, Paint linePaint, Paint trianglePaint, Boolean triangleFilled) {
         super(context);
 
         this.backgroundPaint = backgroundPaint;
-
-
-        this.linePaint = lineColor;
+        this.linePaint = linePaint;
         this.trianglePaint = trianglePaint;
         this.triangleFilled = triangleFilled;
-        this.triangleLightPaint = triangleLightColor;
+
 
 
 
