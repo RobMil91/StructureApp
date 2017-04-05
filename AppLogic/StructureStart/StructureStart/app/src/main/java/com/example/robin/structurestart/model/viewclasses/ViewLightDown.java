@@ -10,7 +10,7 @@ import android.view.View;
 
 /**
  * Example View Class in a package
- *
+ *!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!not needed with filled option of up and down!!!
  *
  */
 //realy need to set it public???
