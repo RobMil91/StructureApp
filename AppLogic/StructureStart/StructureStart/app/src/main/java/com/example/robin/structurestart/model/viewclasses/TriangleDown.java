@@ -31,45 +31,24 @@ import android.view.View;
      */
     public TriangleDown(Context context, Paint backgroundPaint, Paint linePaint, Paint trianglePaint, Boolean triangleFilled) {
         super(context);
-
         this.backgroundPaint = backgroundPaint;
         this.linePaint = linePaint;
         this.trianglePaint = trianglePaint;
         this.triangleFilled = triangleFilled;
-
-
-
-
     }
 
 
     @Override
     protected void onDraw(Canvas canvas) {
-
-
         // call the super class onDraw Method
         super.onDraw(canvas);
 
-
-
-        /**
-         * get the view dimensions!
-         */
         int screenWidth = canvas.getWidth();
         int screenHeight = canvas.getHeight();
 
-        //init paint
-    //    Paint paintBackground = new Paint(Color.BLACK);
-       // Paint paintFill = new Paint();
-     //   Paint paintFrame = new Paint();
-
-      //  paintBackground.setColor(Color.WHITE);
-        //print background
         canvas.drawPaint(this.backgroundPaint);
 
-
-
-        //starting to draw frame!
+        linePaint.setAntiAlias(true); //for smoothing edges!
         linePaint.setStrokeWidth(4);
 
 
