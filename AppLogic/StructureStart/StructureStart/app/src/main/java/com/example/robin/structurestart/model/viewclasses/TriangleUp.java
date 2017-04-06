@@ -58,15 +58,17 @@ import android.view.View;
 
         if (triangleFilled) {
             trianglePaint.setStyle(Paint.Style.FILL_AND_STROKE);
+            drawFullTriangleColor(canvas, screenHeight, screenWidth);
 
 
         } else {
             trianglePaint.setStyle(Paint.Style.FILL);
             drawInnerTriangle(canvas, screenHeight, screenWidth);
+            drawEmptyTriangleColor(canvas, screenHeight, screenWidth);
 
         }
 
-        drawTriangleColor(canvas, screenHeight, screenWidth);
+
 
         drawOuterFrame(canvas, screenHeight, screenWidth);
 
@@ -95,7 +97,7 @@ import android.view.View;
      * @param screenHeight
      * @param screenWidth
      */
-    public void drawTriangleColor(Canvas canvas, int screenHeight, int screenWidth) {
+    public void drawEmptyTriangleColor(Canvas canvas, int screenHeight, int screenWidth) {
 
         Point a = new Point(screenWidth / 2 - 100, screenHeight / 2);
         Point b = new Point(screenWidth / 2 + 100, screenHeight / 2);
@@ -113,6 +115,7 @@ import android.view.View;
         path.lineTo(b.x, b.y);
         path.lineTo(c.x, c.y);
         path.lineTo(a.x, a.y);
+
 
         //path for inner triangle with d e f instead of a' b' c'
         path.moveTo(d.x,d.y);
@@ -142,6 +145,27 @@ import android.view.View;
 
         //draw from top of triangle to the right line
         canvas.drawLine(screenWidth/2 + 100,screenHeight / 2,screenWidth/2,screenHeight/2 - 100, linePaint);
+
+    }
+
+    public void drawFullTriangleColor(Canvas canvas, int screenHeight, int screenWidth) {
+
+        Point a = new Point(screenWidth / 2 - 100, screenHeight / 2);
+        Point b = new Point(screenWidth / 2 + 100, screenHeight / 2);
+        Point c = new Point(screenWidth / 2, screenHeight / 2 - 100);
+
+        //path for outer line triangle
+        Path path = new Path();
+        path.setFillType(Path.FillType.EVEN_ODD);
+        path.moveTo(a.x,a.y);
+        path.lineTo(b.x, b.y);
+        path.lineTo(c.x, c.y);
+        path.lineTo(a.x, a.y);
+
+        path.close();
+
+        canvas.drawPath(path, trianglePaint);
+
 
     }
 
