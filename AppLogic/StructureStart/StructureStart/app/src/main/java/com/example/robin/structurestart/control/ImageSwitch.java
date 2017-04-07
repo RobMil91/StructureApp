@@ -1,10 +1,6 @@
 package com.example.robin.structurestart.control;
 
 import com.example.robin.structurestart.model.Model;
-import com.example.robin.structurestart.model.viewclasses.TriangleDown;
-import com.example.robin.structurestart.model.viewclasses.TriangleUp;
-import com.example.robin.structurestart.model.viewclasses.ViewLightDown;
-import com.example.robin.structurestart.model.viewclasses.ViewLightUp;
 import com.example.robin.structurestart.view.RunActivity;
 
 /**
@@ -44,8 +40,8 @@ this.runImg = runImg;
         //start the handler
         this.handler = new android.os.Handler();
 
-     final ViewLightUp viewLightUp = new ViewLightUp(runImg);
-     final ViewLightDown viewLightDown = new ViewLightDown(runImg);
+   //  final ViewLightUp viewLightUp = new ViewLightUp(runImg);
+   //  final ViewLightDown viewLightDown = new ViewLightDown(runImg);
         //just for testing!
     // final TriangleDown viewtriangleDown = new TriangleDown(runImg);
 
@@ -59,7 +55,7 @@ this.runImg = runImg;
         public void run() {
 
 
-         runImg.setContentView(viewLightDown);
+     //    runImg.setContentView(viewLightDown);
         }
        });
 
@@ -76,7 +72,7 @@ this.runImg = runImg;
         @Override
         public void run() {
 
-         runImg.setContentView(viewLightUp);
+    //     runImg.setContentView(viewLightUp);
 
 
         }

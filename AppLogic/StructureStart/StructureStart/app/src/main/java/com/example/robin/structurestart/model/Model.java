@@ -1,14 +1,11 @@
 package com.example.robin.structurestart.model;
 
 import android.graphics.Color;
-import android.graphics.Paint;
 import android.view.View;
 
 import com.example.robin.structurestart.model.viewclasses.TriangleDown;
 import com.example.robin.structurestart.model.viewclasses.TriangleUp;
 import com.example.robin.structurestart.model.viewclasses.ViewEmpty;
-import com.example.robin.structurestart.model.viewclasses.ViewLightDown;
-import com.example.robin.structurestart.model.viewclasses.ViewLightUp;
 
 /**
  * Class to contain all the different view classes
@@ -31,8 +28,7 @@ public class Model {
     private TriangleDown triangleDown;
     private TriangleUp triangleUp;
     private ViewEmpty viewEmpty;
-    private ViewLightDown viewLightDown;
-    private ViewLightUp viewLightUp;
+
 
     /**
      *
