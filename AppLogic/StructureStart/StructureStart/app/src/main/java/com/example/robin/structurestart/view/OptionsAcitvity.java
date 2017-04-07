@@ -7,6 +7,9 @@ import android.widget.Spinner;
 
 import com.example.robin.structurestart.R;
 
+/**
+ * Subject of the Manage Class
+ */
 public class OptionsAcitvity extends AppCompatActivity {
 
 

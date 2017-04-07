@@ -7,14 +7,12 @@ import com.example.robin.structurestart.view.RunActivity;
  * Class to switch the images
  */
 
-public class ImageSwitch{
+public class ImageSwitch {
 
    private android.os.Handler handler;
  //Use to get the images!
     private Model model;
-    private int entiretime;
-    private int lightUpTime;
-    private int pausetime;
+
     private boolean sound;
     private int soundKind;
  private RunActivity runImg;
@@ -28,7 +26,8 @@ public class ImageSwitch{
      * @param soundKind decide which kind of sound should be played
      */
     public ImageSwitch(RunActivity runImg, Model model, int entiretime, int lightUpTime, int pausetime, boolean sound, int soundKind) {
-this.runImg = runImg;
+        this.runImg = runImg;
+        this.model = model;
 
 
     }
@@ -46,7 +45,7 @@ this.runImg = runImg;
     // final TriangleDown viewtriangleDown = new TriangleDown(runImg);
 
 
-     final Runnable triaLightDown = new Runnable() {
+     final Runnable triaDownLight = new Runnable() {
       @Override
       public void run() {
 
@@ -55,48 +54,13 @@ this.runImg = runImg;
         public void run() {
 
 
-     //    runImg.setContentView(viewLightDown);
+         runImg.setContentView(model.getTriangleLightDownView());
         }
        });
 
       }
      };
-
-
-
-     final   Runnable triaLightUp = new Runnable() {
-      @Override
-      public void run() {
-
-       runImg.runOnUiThread(new Runnable() {
-        @Override
-        public void run() {
-
-    //     runImg.setContentView(viewLightUp);
-
-
-        }
-       });
-      }
-     };
-
-     final   Runnable triangleDown = new Runnable() {
-      @Override
-      public void run() {
-
-       runImg.runOnUiThread(new Runnable() {
-        @Override
-        public void run() {
-//just for testing
-       //  runImg.setContentView(viewtriangleDown);
-
-
-        }
-       });
-      }
-     };
-
-        final   Runnable triangleUp = new Runnable() {
+        final   Runnable triaDown = new Runnable() {
             @Override
             public void run() {
 
@@ -104,7 +68,58 @@ this.runImg = runImg;
                     @Override
                     public void run() {
 
-                    //    runImg.setContentView(TriangleUp);
+                        runImg.setContentView(model.getTriangleDownView());
+
+
+                    }
+                });
+            }
+        };
+
+
+     final   Runnable triaUpLight = new Runnable() {
+      @Override
+      public void run() {
+
+       runImg.runOnUiThread(new Runnable() {
+        @Override
+        public void run() {
+
+         runImg.setContentView(model.getTriangleLightUpView());
+
+
+        }
+       });
+      }
+     };
+
+
+
+        final   Runnable triaUp = new Runnable() {
+            @Override
+            public void run() {
+
+                runImg.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        runImg.setContentView(model.getTriangleUpView());
+
+
+                    }
+                });
+            }
+        };
+
+        final   Runnable empty = new Runnable() {
+            @Override
+            public void run() {
+
+                runImg.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        runImg.setContentView(model.getImageEmptyView());
 
 
                     }
@@ -121,7 +136,7 @@ this.runImg = runImg;
      do {
 
 
-      hans.postDelayed(triangleDown, 5000);
+      hans.postDelayed(triaDown, 5000);
       systemTime= systemTime + 5000;
 
      }while(systemTime < 5000);

@@ -53,86 +53,9 @@ public class RunActivity extends AppCompatActivity {
         Model model = new Model(this, paintBackground, paintFrame, paintFillUp, paintFillDown, lightSeq, lightSeq);
 
         setContentView(model.getTriangleLightDownView());
-       // sequenzeStart();
         //for testing of image not included
        // imageSwitch.seqeunzstart();
 
     }
 
-
-/*
-    private void sequenzeStart() {
-
-
-      final  ViewLightUp viewLightUp = new ViewLightUp(this);
-       final ViewLightDown viewLightDown = new ViewLightDown(this);
-        final TriangleDown viewtriangleDown = new TriangleDown(this);
-
-
-        final Runnable triaLightDown = new TimerTask() {
-            @Override
-            public void run() {
-
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-
-
-                        setContentView(viewLightDown);
-                    }
-                });
-
-            }
-        };
-
-
-
-        final   Runnable triaLightUp = new TimerTask() {
-            @Override
-            public void run() {
-
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-
-                        setContentView(viewLightUp);
-
-
-                    }
-                });
-            }
-        };
-
-        final   Runnable triangleDown = new TimerTask() {
-            @Override
-            public void run() {
-
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-
-                        setContentView(viewtriangleDown);
-
-
-                    }
-                });
-            }
-        };
-
-        android.os.Handler hans = new android.os.Handler();
-
-        int systemTime = 0;
-
-
-        int time = 0;
-        do {
-
-
-            hans.postDelayed(triangleDown, 5000);
-            systemTime= systemTime + 5000;
-
-        }while(systemTime < 5000);
-
-        }
-*/
 }

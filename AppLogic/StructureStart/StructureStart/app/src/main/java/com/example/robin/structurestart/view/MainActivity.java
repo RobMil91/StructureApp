@@ -9,6 +9,9 @@ import android.widget.EditText;
 
 import com.example.robin.structurestart.R;
 
+/**
+ * Subject of the Manage class
+ */
 public class MainActivity extends AppCompatActivity {
 
     @Override
