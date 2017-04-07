@@ -1,6 +1,6 @@
 package com.example.robin.structurestart.model;
 
-import android.graphics.Color;
+import android.content.Context;
 import android.graphics.Paint;
 import android.view.View;
 
@@ -17,68 +17,65 @@ public class Model {
     /**
      * Initiating Variables
      */
-    private Paint backgroundColor;
-    private  Paint lineColor;
-    private  Paint triangleColor;
-    private   Paint triangleLightColor;
-    private   Boolean triangleFilled;
+    private Paint backgroundPaint;
+    private  Paint linePaint;
+    private  Paint triangleUpPaint;
+    private  Paint triangleDownPaint;
+    private   Paint triangleUpLightPaint;
+    private   Paint triangleDownLightPaint;
 
+    private Context context;
     /**
      * Viewclasses
      */
     private TriangleDown triangleDown;
+    private TriangleDown triangleLightDown;
     private TriangleUp triangleUp;
+    private TriangleUp triangleLightUp;
     private ViewEmpty viewEmpty;
 
 
-    /**
-     *
-     * @param backgroundColor Color of the background
-     * @param lineColor color of the lines
-     * @param triangleColorUp color of the
-     * @param triangleLightColor
-     * @param triangleFilled
-     */
-    public Model (Paint backgroundColor, Paint lineColor, Paint triangleColorUp, Paint triangleColorDown, Paint triangleLightColor, Boolean triangleFilled) {
+    public Model (Context context, Paint backgroundPaint, Paint linePaint, Paint trianglePaintUp, Paint trianglePaintDown, Paint triangleUpLightPaint, Paint triangleDownLightPaint) {
 
-        this.backgroundColor = backgroundColor;
-        this.lineColor = lineColor;
-        this.triangleColor = triangleColor;
-        this.triangleLightColor = triangleLightColor;
-        this.triangleFilled = triangleFilled;
+        this.context = context;
+        this.backgroundPaint = backgroundPaint;
+        this.linePaint = linePaint;
+        this.triangleUpPaint = trianglePaintUp;
+        this.triangleDownPaint = trianglePaintDown;
+        this.triangleUpLightPaint = triangleUpLightPaint;
+        this.triangleDownLightPaint = triangleDownLightPaint;
+        createModel();
 
     }
 
-    public void colorViews() {
-/*
-   Paint testPaint = new Paint();
-        testPaint.setColor(100);
-        testPaint.setARGB(1,255,0,255);
+
+    public void createModel() {
+
+        //create Empty TriangleDown -> filled empty
+        triangleDown = new TriangleDown(context, backgroundPaint, linePaint, triangleDownPaint, false);
+        //create FullTriangle for lightUp Sequenze
 
 
-*/
-
-color.
     }
 
 
-
-    public View getImageEmpty() {
-        return null;
+    public View getImageEmptyView() {
+        return viewEmpty;
     }
 
-    public View getTriangleUp() {
-        return null;
+    public View getTriangleUpView() {
+        return triangleUp;
     }
 
-    public View getTriangleLightUp() {
-        return null;
+    public View getTriangleLightUpView() {
+        return triangleLightUp;
     }
 
-    public View getTriangleDown() {
-        return null;
+    public View getTriangleDownView() {
+        return triangleDown;
     }
-    public View getTriangleLightDown() {
-        return null;
+
+    public View getTriangleLightDownView() {
+        return triangleLightDown;
     }
 }
