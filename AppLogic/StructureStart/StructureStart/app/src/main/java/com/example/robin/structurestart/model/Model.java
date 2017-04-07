@@ -10,6 +10,7 @@ import com.example.robin.structurestart.model.viewclasses.ViewEmpty;
 
 /**
  * Class to contain all the different view classes
+ * and make an easy use for the imageswitcher
  */
 
 public class Model {
@@ -53,8 +54,14 @@ public class Model {
 
         //create Empty TriangleDown -> filled empty
         triangleDown = new TriangleDown(context, backgroundPaint, linePaint, triangleDownPaint, false);
-        //create FullTriangle for lightUp Sequenze
-
+        //create FullTriangle for Light Down Sequenze
+        triangleLightDown = new TriangleDown(context, backgroundPaint, linePaint, triangleDownLightPaint, true);
+        //create triangle up without fill
+        triangleUp = new TriangleUp(context, backgroundPaint, linePaint, triangleUpPaint, false);
+        //create full triangle for light up sequenze
+        triangleLightUp = new TriangleUp(context, backgroundPaint, linePaint, triangleUpLightPaint, true);
+        //empty view
+        viewEmpty = new ViewEmpty(context, backgroundPaint);
 
     }
 
