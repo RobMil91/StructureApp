@@ -38,12 +38,13 @@ public class RunActivity extends AppCompatActivity {
 
 
         //testing instance
-      //  final TriangleDown viewTriangleDown = new TriangleDown(this, paintBackground, paintFrame,paintFill, false);
+        final TriangleDown viewTriangleDown2 = new TriangleDown(this, paintBackground, paintFrame,paintFill, false);
         final TriangleUp viewTriangleUp = new TriangleUp(this, paintBackground, paintFrame,paintFill, false);
+
 
         final ViewEmpty viewEmpty = new ViewEmpty(this);
 
-        setContentView(viewTriangleUp);
+        setContentView(viewTriangleDown2);
        // sequenzeStart();
         //for testing of image not included
        // imageSwitch.seqeunzstart();

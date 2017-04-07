@@ -63,6 +63,7 @@ import android.view.View;
             this.trianglePaint.setStyle(Paint.Style.FILL_AND_STROKE);
 
 
+
         } else {
             this.trianglePaint.setStyle(Paint.Style.FILL);
             //draw inner traingle left to top
