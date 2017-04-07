@@ -1,6 +1,7 @@
 package com.example.robin.structurestart.model;
 
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.view.View;
 
 import com.example.robin.structurestart.model.viewclasses.TriangleDown;
@@ -16,10 +17,10 @@ public class Model {
     /**
      * Initiating Variables
      */
-    private Color backgroundColor;
-    private  Color lineColor;
-    private  Color triangleColor;
-    private   Color triangleLightColor;
+    private Paint backgroundColor;
+    private  Paint lineColor;
+    private  Paint triangleColor;
+    private   Paint triangleLightColor;
     private   Boolean triangleFilled;
 
     /**
@@ -38,7 +39,7 @@ public class Model {
      * @param triangleLightColor
      * @param triangleFilled
      */
-    public Model (Color backgroundColor, Color lineColor, Color triangleColorUp, Color triangleColorDown, Color triangleLightColor, Boolean triangleFilled) {
+    public Model (Paint backgroundColor, Paint lineColor, Paint triangleColorUp, Paint triangleColorDown, Paint triangleLightColor, Boolean triangleFilled) {
 
         this.backgroundColor = backgroundColor;
         this.lineColor = lineColor;
@@ -53,8 +54,11 @@ public class Model {
    Paint testPaint = new Paint();
         testPaint.setColor(100);
         testPaint.setARGB(1,255,0,255);
+
+
 */
 
+color.
     }
 
 

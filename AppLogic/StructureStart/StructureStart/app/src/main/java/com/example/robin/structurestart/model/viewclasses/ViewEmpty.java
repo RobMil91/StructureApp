@@ -12,9 +12,11 @@ import android.view.View;
 
 public class ViewEmpty extends View {
 
-    public ViewEmpty(Context context) {
-        super(context);
+    private Paint backgroundPaint;
 
+    public ViewEmpty(Context context, Paint backgroundPaint) {
+        super(context);
+        this.backgroundPaint = backgroundPaint;
 
     }
 
@@ -26,7 +28,7 @@ public class ViewEmpty extends View {
     protected void onDraw(Canvas canvas) {
 
         Paint paintBackground = new Paint();
-        paintBackground.setColor(Color.BLUE);
-        canvas.drawPaint(paintBackground);
+       // paintBackground.setColor(backgroundPaint);
+        canvas.drawPaint(backgroundPaint);
     }
 }

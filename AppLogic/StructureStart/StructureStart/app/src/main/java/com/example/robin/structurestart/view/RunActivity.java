@@ -30,19 +30,19 @@ public class RunActivity extends AppCompatActivity {
 
 
         Paint paintBackground = new Paint();
-        paintBackground.setColor(Color.WHITE);
+        paintBackground.setColor(Color.BLUE);
         Paint paintFill = new Paint();
-        paintFill.setColor(Color.BLUE);
+        paintFill.setColor(Color.RED);
         Paint paintFrame = new Paint();
         paintFrame.setColor(Color.BLACK);
 
 
         //testing instance
-        final TriangleDown viewTriangleDown = new TriangleDown(this, paintBackground, paintFrame,paintFill, true);
+        final TriangleDown viewTriangleDown = new TriangleDown(this, paintBackground, paintFrame,paintFill, false);
         final TriangleUp viewTriangleUp = new TriangleUp(this, paintBackground, paintFrame,paintFill, false);
 
 
-        final ViewEmpty viewEmpty = new ViewEmpty(this);
+        final ViewEmpty viewEmpty = new ViewEmpty(this, paintBackground);
 
         setContentView(viewTriangleDown);
        // sequenzeStart();
