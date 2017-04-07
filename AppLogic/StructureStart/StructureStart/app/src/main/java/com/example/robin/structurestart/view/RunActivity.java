@@ -31,20 +31,28 @@ public class RunActivity extends AppCompatActivity {
 
         Paint paintBackground = new Paint();
         paintBackground.setColor(Color.BLUE);
-        Paint paintFill = new Paint();
-        paintFill.setColor(Color.RED);
+
+        //triangle Color
+        Paint paintFillUp = new Paint();
+        paintFillUp.setColor(Color.BLUE);
+
+        Paint paintFillDown = new Paint();
+        paintFillDown.setColor(Color.RED);
+
+        Paint lightSeq = new Paint();
+        lightSeq.setColor(Color.YELLOW);
+
+
         Paint paintFrame = new Paint();
         paintFrame.setColor(Color.BLACK);
 
 
-        //testing instance
-        final TriangleDown viewTriangleDown = new TriangleDown(this, paintBackground, paintFrame,paintFill, false);
-        final TriangleUp viewTriangleUp = new TriangleUp(this, paintBackground, paintFrame,paintFill, false);
 
 
-        final ViewEmpty viewEmpty = new ViewEmpty(this, paintBackground);
 
-        setContentView(viewTriangleDown);
+        Model model = new Model(this, paintBackground, paintFrame, paintFillUp, paintFillDown, lightSeq, lightSeq);
+
+        setContentView(model.getTriangleLightDownView());
        // sequenzeStart();
         //for testing of image not included
        // imageSwitch.seqeunzstart();
