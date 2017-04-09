@@ -1,5 +1,8 @@
 package com.example.robin.structurestart.model;
 
+import java.util.Arrays;
+import java.util.Collections;
+
 /**
  * Class to create an Boolean Array for the up and down
  * which should be randomizsed
@@ -63,7 +66,6 @@ public class Algorithm {
             //1 stands for triangleUp
             upDownArray[i] = 1;
 
-
         }
 
         for (int i = calcAmmountUp() + 1; i <= calcArrayLenngth(); i++) {
@@ -73,6 +75,20 @@ public class Algorithm {
 
         }
 
+
+    }
+
+    private int[] randomizeArray() {
+
+    Collections.shuffle(Arrays.asList(upDownArray));
+
+        return upDownArray;
+    }
+
+    public int[] getIntegerArray() {
+
+        fillArray();
+        return randomizeArray();
 
     }
 
