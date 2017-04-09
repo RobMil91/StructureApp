@@ -8,22 +8,71 @@ public class Algorithm {
 
     private int entiretime;
     private int lightUpTime;
-    private int pausetime;
+    private int triaTime;
     private int emptytime;
     private int[]  upDownArray;
+    private double ratio;
 
-    public Algorithm(int entiretime, int lightUpTime, int pausetime, int emptytime) {
+    /**
+     *
+     * @param entiretime in milliseconds
+     * @param lightUpTime in milliseconds
+     * @param pausetime in milliseconds
+     * @param emptytime in milliseconds
+     * @param ratio  Up and Down Ratio: double value from [0 to 1]
+     *              0 means all triangles Down 1 means all triangles Up
+     */
+    public Algorithm(int entiretime, int lightUpTime, int pausetime, int emptytime, double ratio) {
         this.entiretime = entiretime;
         this.lightUpTime = lightUpTime;
-        this.pausetime = pausetime;
+        this.triaTime = pausetime;
         this.emptytime = emptytime;
+        this.ratio = ratio;
 
 
     }
 
-    private void calcArrayLenngth() {
+    private int calcArrayLenngth() {
 
-      int sol =  entiretime / (pausetime + lightUpTime + emptytime);
+        double lengthArray = entiretime / (triaTime + lightUpTime + emptytime);
+
+        //make sure int value is achieved
+      return  (int) Math.round(lengthArray);
+
+    }
+
+    private int calcAmmountUp() {
+
+
+        //calculate the ratio to the complete arrayLength
+        double calcValueUp = calcArrayLenngth() * ratio;
+
+        //round the possible comma value
+        return  (int) Math.round(calcValueUp);
+
+    }
+
+    private void fillArray() {
+
+        //iniatizilise length
+        upDownArray = new int[calcArrayLenngth()];
+
+        //walk through array till ratio is full
+        for (int i = 0; i <= calcAmmountUp(); i++) {
+
+            //1 stands for triangleUp
+            upDownArray[i] = 1;
+
+
+        }
+
+        for (int i = calcAmmountUp() + 1; i <= calcArrayLenngth(); i++) {
+
+            //0 stands for triangleDown
+            upDownArray[i] = 0;
+
+        }
+
 
     }
 
