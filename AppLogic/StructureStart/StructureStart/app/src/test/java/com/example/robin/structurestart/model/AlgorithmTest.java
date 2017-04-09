@@ -6,6 +6,8 @@ import android.util.Log;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.Assert.*;
 import static org.junit.Assert.assertEquals;
 
@@ -38,9 +40,11 @@ public class AlgorithmTest {
         Algorithm algorithm1 = new Algorithm(480000, 500, 7500, 4000, 0.5);
         algorithm1.fillArray();
 
+            int current = 0;
         for (int i = 0; i < 20; i++) {
 
-            assertEquals(1,algorithm1.upDownArray[i]);
+            current = algorithm1.upDownArray.get(i);
+            assertEquals(1,current);
         }
 
     }
@@ -50,7 +54,7 @@ public class AlgorithmTest {
     @Test
     public void testReturnMethod() {
         Algorithm algorithm1 = new Algorithm(480000, 500, 7500, 4000, 0.5);
-        assertEquals(40, algorithm1.getIntegerArray().length);
+        assertEquals(40, algorithm1.getIntegerArray().size());
 
 
     }
@@ -63,26 +67,28 @@ public class AlgorithmTest {
         Algorithm algorithm1 = new Algorithm(480000, 500, 7500, 4000, 0.5);
         algorithm1.fillArray();
 
+        int current = 0;
         for (int i = 20; i <= 39; i++) {
 
-            assertEquals(0,algorithm1.upDownArray[i]);
+            current = algorithm1.upDownArray.get(i);
+            assertEquals(0,current);
         }
 
     }
 
     @Test
-    public void checkRatio() {
+    public void checkRatio05() {
         Algorithm algorithm1 = new Algorithm(480000, 500, 7500, 4000, 0.5);
-        int[] testArray = algorithm1.getIntegerArray();
+        ArrayList<Integer> testArray = algorithm1.getIntegerArray();
 
         int upsAmmount = 0;
         int downAmmount = 0;
         for (int i = 0; i < 40; i++) {
 
 
-            if (testArray[i] == 0) {
+            if (testArray.get(i) == 0) {
                 downAmmount++;
-            } else if (testArray[i] == 1) {
+            } else if (testArray.get(i) == 1) {
                 upsAmmount++;
             } else {
                 fail("only 0 and 1 should appear!");
@@ -97,16 +103,16 @@ public class AlgorithmTest {
     @Test
     public void checkRatio02() {
         Algorithm algorithm1 = new Algorithm(480000, 500, 7500, 4000, 0.2);
-        int[] testArray = algorithm1.getIntegerArray();
+        ArrayList<Integer> testArray = algorithm1.getIntegerArray();
 
         int upsAmmount = 0;
         int downAmmount = 0;
         for (int i = 0; i < 40; i++) {
 
 
-            if (testArray[i] == 0) {
+            if (testArray.get(i) == 0) {
                 downAmmount++;
-            } else if (testArray[i] == 1) {
+            } else if (testArray.get(i) == 1) {
                 upsAmmount++;
             } else {
                 fail("only 0 and 1 should appear!");
@@ -122,10 +128,10 @@ public class AlgorithmTest {
     @Test
     public void checkRandom() {
         Algorithm algorithm1 = new Algorithm(480000, 500, 7500, 4000, 0.2);
-        int[] testArray = algorithm1.getIntegerArray();
+        ArrayList<Integer> testArray = algorithm1.getIntegerArray();
 
         for (int i = 0; i < 40; i++) {
-            System.out.print(testArray[i]);
+            System.out.print(testArray.get(i));
         }
 
 

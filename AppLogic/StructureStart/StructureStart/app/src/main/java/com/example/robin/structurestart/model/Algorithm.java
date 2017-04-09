@@ -1,7 +1,9 @@
 package com.example.robin.structurestart.model;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 
 /**
  * Class to create an Boolean Array for the up and down
@@ -14,7 +16,7 @@ public class Algorithm {
     private int lightUpTime;
     private int triaTime;
     private int emptytime;
-    public int[]  upDownArray;
+    public ArrayList<Integer> upDownArray;
     private double ratio;
 
     /**
@@ -57,35 +59,37 @@ public class Algorithm {
 
     }
 
-    public void fillArray() {
+    public ArrayList<Integer> fillArray() {
 
         //iniatizilise length
-        upDownArray = new int[calcArrayLenngth()];
+        upDownArray = new ArrayList<Integer>();
 
         //walk through array till ratio is full
         for (int i = 0; i < calcAmmountUp(); i++) {
 
             //1 stands for triangleUp
-            upDownArray[i] = 1;
+            upDownArray.add(i,1);
 
         }
 
         for (int i = calcAmmountUp(); i < calcArrayLenngth(); i++) {
 
             //0 stands for triangleDown
-            upDownArray[i] = 0;
+            upDownArray.add(i,0);
 
         }
+
+        return upDownArray;
 
 
     }
 
-    public int[] randomizeArray() {
-
-        int[] shuffleArray = upDownArray;
+    public ArrayList<Integer> randomizeArray(ArrayList<Integer> upDownArray) {
 
 
-    Collections.shuffle(Arrays.asList(upDownArray));
+
+
+    Collections.shuffle(upDownArray);
 
         return upDownArray;
     }
@@ -94,10 +98,10 @@ public class Algorithm {
      * Getter Method for the calculated Array
      * @return integer Array with 1 for up and 0 for down
      */
-    public int[] getIntegerArray() {
+    public ArrayList<Integer> getIntegerArray() {
 
-        fillArray();
-        return randomizeArray();
+
+        return randomizeArray(fillArray());
 
     }
 
