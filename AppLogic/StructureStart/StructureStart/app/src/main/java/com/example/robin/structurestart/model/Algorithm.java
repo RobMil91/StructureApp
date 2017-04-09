@@ -9,19 +9,21 @@ public class Algorithm {
     private int entiretime;
     private int lightUpTime;
     private int pausetime;
+    private int emptytime;
     private int[]  upDownArray;
 
-    public Algorithm(int entiretime, int lightUpTime, int pausetime) {
+    public Algorithm(int entiretime, int lightUpTime, int pausetime, int emptytime) {
         this.entiretime = entiretime;
         this.lightUpTime = lightUpTime;
         this.pausetime = pausetime;
+        this.emptytime = emptytime;
 
 
     }
 
     private void calcArrayLenngth() {
 
-      int sol =  entiretime / (pausetime + lightUpTime);
+      int sol =  entiretime / (pausetime + lightUpTime + emptytime);
 
     }
 
