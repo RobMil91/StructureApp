@@ -1,9 +1,6 @@
 package com.example.robin.structurestart.model;
 
 
-import android.util.Log;
-
-import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -54,7 +51,7 @@ public class AlgorithmTest {
     @Test
     public void testReturnMethod() {
         Algorithm algorithm1 = new Algorithm(480000, 500, 7500, 4000, 0.5);
-        assertEquals(40, algorithm1.getIntegerArray().size());
+        assertEquals(40, algorithm1.getIntList().size());
 
 
     }
@@ -79,7 +76,7 @@ public class AlgorithmTest {
     @Test
     public void checkRatio05() {
         Algorithm algorithm1 = new Algorithm(480000, 500, 7500, 4000, 0.5);
-        ArrayList<Integer> testArray = algorithm1.getIntegerArray();
+        ArrayList<Integer> testArray = algorithm1.getIntList();
 
         int upsAmmount = 0;
         int downAmmount = 0;
@@ -103,7 +100,7 @@ public class AlgorithmTest {
     @Test
     public void checkRatio02() {
         Algorithm algorithm1 = new Algorithm(480000, 500, 7500, 4000, 0.2);
-        ArrayList<Integer> testArray = algorithm1.getIntegerArray();
+        ArrayList<Integer> testArray = algorithm1.getIntList();
 
         int upsAmmount = 0;
         int downAmmount = 0;
@@ -127,8 +124,8 @@ public class AlgorithmTest {
 
     @Test
     public void checkRandom() {
-        Algorithm algorithm1 = new Algorithm(480000, 500, 7500, 4000, 0.2);
-        ArrayList<Integer> testArray = algorithm1.getIntegerArray();
+        Algorithm algorithm1 = new Algorithm(480000, 500, 7500, 4000, 0.5);
+        ArrayList<Integer> testArray = algorithm1.getIntList();
 
         for (int i = 0; i < 40; i++) {
             System.out.print(testArray.get(i));

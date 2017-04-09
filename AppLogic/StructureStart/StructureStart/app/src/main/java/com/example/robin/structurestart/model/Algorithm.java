@@ -98,7 +98,7 @@ public class Algorithm {
      * Getter Method for the calculated Array
      * @return integer Array with 1 for up and 0 for down
      */
-    public ArrayList<Integer> getIntegerArray() {
+    public ArrayList<Integer> getIntList() {
 
 
         return randomizeArray(fillArray());

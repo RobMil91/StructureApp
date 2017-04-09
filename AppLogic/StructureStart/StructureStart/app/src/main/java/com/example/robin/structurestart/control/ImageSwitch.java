@@ -1,5 +1,6 @@
 package com.example.robin.structurestart.control;
 
+import com.example.robin.structurestart.model.Algorithm;
 import com.example.robin.structurestart.model.Model;
 import com.example.robin.structurestart.view.RunActivity;
 
@@ -12,23 +13,20 @@ public class ImageSwitch {
    private android.os.Handler handler;
  //Use to get the images!
     private Model model;
-
+   private Algorithm alg;
     private boolean sound;
     private int soundKind;
  private RunActivity runImg;
 
     /**
      * @param model give the switcher the model for the images
-     * @param entiretime runtime of the image sequenze
-     * @param lightUpTime time how long the lightupTriangle should be shown
-     * @param pausetime time between the the triangles
      * @param sound if sound should be integrated boolean
      * @param soundKind decide which kind of sound should be played
      */
-    public ImageSwitch(RunActivity runImg, Model model, int entiretime, int lightUpTime, int pausetime, boolean sound, int soundKind) {
+    public ImageSwitch(RunActivity runImg, Model model, Algorithm alg, boolean sound, int soundKind) {
         this.runImg = runImg;
         this.model = model;
-
+        this.alg = alg;
 
     }
 
