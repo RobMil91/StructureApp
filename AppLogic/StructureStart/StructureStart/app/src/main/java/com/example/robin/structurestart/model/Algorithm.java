@@ -6,6 +6,7 @@ import java.util.Collections;
 /**
  * Class to create an Boolean Array for the up and down
  * which should be randomizsed
+ * ----------------------Refactor the public methods!!!!!
  */
 public class Algorithm {
 
@@ -13,29 +14,30 @@ public class Algorithm {
     private int lightUpTime;
     private int triaTime;
     private int emptytime;
-    private int[]  upDownArray;
+    public int[]  upDownArray;
     private double ratio;
 
     /**
-     *
+     * The lightUp, triangle and empty time together specify one cycle
      * @param entiretime in milliseconds
      * @param lightUpTime in milliseconds
-     * @param pausetime in milliseconds
+     * @param triaTime in milliseconds
      * @param emptytime in milliseconds
      * @param ratio  Up and Down Ratio: double value from [0 to 1]
      *              0 means all triangles Down 1 means all triangles Up
      */
-    public Algorithm(int entiretime, int lightUpTime, int pausetime, int emptytime, double ratio) {
+    public Algorithm(int entiretime, int lightUpTime, int triaTime, int emptytime, double ratio) {
         this.entiretime = entiretime;
         this.lightUpTime = lightUpTime;
-        this.triaTime = pausetime;
+        this.triaTime = triaTime;
         this.emptytime = emptytime;
         this.ratio = ratio;
 
 
     }
 
-    private int calcArrayLenngth() {
+    //public only for testing Refactor
+    public int calcArrayLenngth() {
 
         double lengthArray = entiretime / (triaTime + lightUpTime + emptytime);
 
@@ -44,7 +46,7 @@ public class Algorithm {
 
     }
 
-    private int calcAmmountUp() {
+    public int calcAmmountUp() {
 
 
         //calculate the ratio to the complete arrayLength
@@ -55,20 +57,20 @@ public class Algorithm {
 
     }
 
-    private void fillArray() {
+    public void fillArray() {
 
         //iniatizilise length
         upDownArray = new int[calcArrayLenngth()];
 
         //walk through array till ratio is full
-        for (int i = 0; i <= calcAmmountUp(); i++) {
+        for (int i = 0; i < calcAmmountUp(); i++) {
 
             //1 stands for triangleUp
             upDownArray[i] = 1;
 
         }
 
-        for (int i = calcAmmountUp() + 1; i <= calcArrayLenngth(); i++) {
+        for (int i = calcAmmountUp(); i < calcArrayLenngth(); i++) {
 
             //0 stands for triangleDown
             upDownArray[i] = 0;
@@ -78,13 +80,17 @@ public class Algorithm {
 
     }
 
-    private int[] randomizeArray() {
+    public int[] randomizeArray() {
 
     Collections.shuffle(Arrays.asList(upDownArray));
 
         return upDownArray;
     }
 
+    /**
+     * Getter Method for the calculated Array
+     * @return integer Array with 1 for up and 0 for down
+     */
     public int[] getIntegerArray() {
 
         fillArray();
