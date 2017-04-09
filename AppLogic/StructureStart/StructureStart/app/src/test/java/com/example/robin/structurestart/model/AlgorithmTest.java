@@ -1,6 +1,8 @@
 package com.example.robin.structurestart.model;
 
 
+import android.util.Log;
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -13,10 +15,7 @@ import static org.junit.Assert.assertEquals;
 public class AlgorithmTest {
 
 
-
-
-
-
+    //check internal methods
 
     @Test
     public void testLength() {
@@ -34,16 +33,7 @@ public class AlgorithmTest {
 
     }
 
-    @Test
-    public void testReturnMethod() {
-        Algorithm algorithm1 = new Algorithm(480000, 500, 7500, 4000, 0.5);
-        assertEquals(40, algorithm1.getIntegerArray().length);
-
-
-    }
-
-
-    @Test
+        @Test
     public void checkUpAmmount() {
         Algorithm algorithm1 = new Algorithm(480000, 500, 7500, 4000, 0.5);
         algorithm1.fillArray();
@@ -54,6 +44,19 @@ public class AlgorithmTest {
         }
 
     }
+
+
+
+    @Test
+    public void testReturnMethod() {
+        Algorithm algorithm1 = new Algorithm(480000, 500, 7500, 4000, 0.5);
+        assertEquals(40, algorithm1.getIntegerArray().length);
+
+
+    }
+
+
+
 
     @Test
     public void checkDownAmmount() {
@@ -88,6 +91,43 @@ public class AlgorithmTest {
         }
         assertEquals(20, upsAmmount);
         assertEquals(20, downAmmount);
+
+    }
+
+    @Test
+    public void checkRatio02() {
+        Algorithm algorithm1 = new Algorithm(480000, 500, 7500, 4000, 0.2);
+        int[] testArray = algorithm1.getIntegerArray();
+
+        int upsAmmount = 0;
+        int downAmmount = 0;
+        for (int i = 0; i < 40; i++) {
+
+
+            if (testArray[i] == 0) {
+                downAmmount++;
+            } else if (testArray[i] == 1) {
+                upsAmmount++;
+            } else {
+                fail("only 0 and 1 should appear!");
+            }
+
+        }
+        assertEquals(8, upsAmmount);
+        assertEquals(32, downAmmount);
+      //  System.printLine()
+
+    }
+
+    @Test
+    public void checkRandom() {
+        Algorithm algorithm1 = new Algorithm(480000, 500, 7500, 4000, 0.2);
+        int[] testArray = algorithm1.getIntegerArray();
+
+        for (int i = 0; i < 40; i++) {
+            System.out.print(testArray[i]);
+        }
+
 
     }
 

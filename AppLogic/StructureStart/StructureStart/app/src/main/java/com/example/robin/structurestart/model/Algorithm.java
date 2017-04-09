@@ -82,6 +82,9 @@ public class Algorithm {
 
     public int[] randomizeArray() {
 
+        int[] shuffleArray = upDownArray;
+
+
     Collections.shuffle(Arrays.asList(upDownArray));
 
         return upDownArray;
