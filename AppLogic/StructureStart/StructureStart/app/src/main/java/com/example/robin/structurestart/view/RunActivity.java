@@ -1,5 +1,6 @@
 package com.example.robin.structurestart.view;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.Bundle;
@@ -61,8 +62,10 @@ public class RunActivity extends AppCompatActivity {
         imageSwitch.seqeunzstart();
 
 
-        //toDo: switch back to main Activity!
-
+        /* switch back to main Activity!
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+*/
     }
 
 }
