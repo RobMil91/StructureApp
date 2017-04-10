@@ -42,7 +42,7 @@ public class RunActivity extends AppCompatActivity {
 
 
         Model model = new Model(this, paintBackground, paintFrame, paintFillUp, paintFillDown, lightSeq, lightSeq, true);
-        Algorithm alg = new Algorithm(480000, 500, 7500, 4000, 0.5);
+        Algorithm alg = new Algorithm(60000, 500, 7500, 4000, 0.5);
         //just test stub
         imageSwitch = new ImageSwitch(this, model, alg);
     //  final  ViewLightUp viewLightUp = new ViewLightUp(this);
@@ -59,6 +59,9 @@ public class RunActivity extends AppCompatActivity {
         setContentView(model.getImageEmptyView());
         //for testing of image not included
         imageSwitch.seqeunzstart();
+
+
+        //toDo: switch back to main Activity!
 
     }
 

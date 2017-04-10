@@ -24,8 +24,12 @@ create the class to do that
 create test for observing the view classes
 get the values from there into the controller class
 
-AdvancedOptions.class
+back button in sequenze has to stop the activity
+
+AdvancedOptions.classa
+-disable backButton
 -change timer 
+-change sound volume!
 (change sound)
 -change triangle size
 -only horizontal?

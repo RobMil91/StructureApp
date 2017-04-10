@@ -188,7 +188,7 @@ public class ImageSwitch {
                 public void run() {
 
 
-                    ToneGenerator toneGen1 = new ToneGenerator(AudioManager.STREAM_ALARM, 1000);
+                    ToneGenerator toneGen1 = new ToneGenerator(AudioManager.STREAM_ALARM, 10000);
                     toneGen1.startTone(ToneGenerator.TONE_CDMA_PIP,150);
 
                 }
