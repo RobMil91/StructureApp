@@ -1,8 +1,15 @@
 package com.example.robin.structurestart.control;
 
+import android.media.AudioManager;
+import android.media.ToneGenerator;
+import android.util.Log;
+
 import com.example.robin.structurestart.model.Algorithm;
 import com.example.robin.structurestart.model.Model;
 import com.example.robin.structurestart.view.RunActivity;
+
+import java.util.ArrayList;
+import java.util.TimerTask;
 
 /**
  * Class to switch the images
@@ -11,19 +18,17 @@ import com.example.robin.structurestart.view.RunActivity;
 public class ImageSwitch {
 
    private android.os.Handler handler;
- //Use to get the images!
     private Model model;
    private Algorithm alg;
-    private boolean sound;
-    private int soundKind;
  private RunActivity runImg;
 
     /**
-     * @param model give the switcher the model for the images
-     * @param sound if sound should be integrated boolean
-     * @param soundKind decide which kind of sound should be played
+     *
+     * @param runImg
+     * @param model
+     * @param alg provides the times of the sequenzes
      */
-    public ImageSwitch(RunActivity runImg, Model model, Algorithm alg, boolean sound, int soundKind) {
+    public ImageSwitch(RunActivity runImg, Model model, Algorithm alg) {
         this.runImg = runImg;
         this.model = model;
         this.alg = alg;
@@ -37,110 +42,157 @@ public class ImageSwitch {
         //start the handler
         this.handler = new android.os.Handler();
 
-   //  final ViewLightUp viewLightUp = new ViewLightUp(runImg);
-   //  final ViewLightDown viewLightDown = new ViewLightDown(runImg);
-        //just for testing!
-    // final TriangleDown viewtriangleDown = new TriangleDown(runImg);
+     android.os.Handler handler = new android.os.Handler();
 
-
-     final Runnable triaDownLight = new Runnable() {
-      @Override
-      public void run() {
-
-       runImg.runOnUiThread(new Runnable() {
-        @Override
-        public void run() {
-
-
-         runImg.setContentView(model.getTriangleLightDownView());
-        }
-       });
-
-      }
-     };
-        final   Runnable triaDown = new Runnable() {
-            @Override
-            public void run() {
-
-                runImg.runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-
-                        runImg.setContentView(model.getTriangleDownView());
-
-
-                    }
-                });
-            }
-        };
-
-
-     final   Runnable triaUpLight = new Runnable() {
-      @Override
-      public void run() {
-
-       runImg.runOnUiThread(new Runnable() {
-        @Override
-        public void run() {
-
-         runImg.setContentView(model.getTriangleLightUpView());
-
-
-        }
-       });
-      }
-     };
-
-
-
-        final   Runnable triaUp = new Runnable() {
-            @Override
-            public void run() {
-
-                runImg.runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-
-                        runImg.setContentView(model.getTriangleUpView());
-
-
-                    }
-                });
-            }
-        };
-
-        final   Runnable empty = new Runnable() {
-            @Override
-            public void run() {
-
-                runImg.runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-
-                        runImg.setContentView(model.getImageEmptyView());
-
-
-                    }
-                });
-            }
-        };
-
-     android.os.Handler hans = new android.os.Handler();
 
      int systemTime = 0;
+        int index = 0;
+        //size -1 is the last index, but while is set to not work on equals!
+        int lastIndex = alg.getIntList().size();
+        ArrayList<Integer> dirArray = alg.getIntList();
 
-
-     int time = 0;
      do {
 
+         //down sequenze cycle
+         if (dirArray.get(index) == 0) {
 
-      hans.postDelayed(triaDown, 5000);
-      systemTime= systemTime + 5000;
 
-     }while(systemTime < 5000);
+             handler.postDelayed(triaDownLight, systemTime);
+             systemTime = systemTime + alg.getLightUpTime();
+             handler.postDelayed(triaDown, systemTime);
+
+
+
+             //up sequenze cycle
+         } else if (dirArray.get(index) == 1){
+
+             handler.postDelayed(triaUpLight, systemTime);
+             systemTime = systemTime + alg.getLightUpTime();
+             handler.postDelayed(triaUp, systemTime);
+
+
+         } else {
+             //problem
+         }
+
+
+
+         systemTime = systemTime + alg.getTriaTime();
+         handler.postDelayed(empty, systemTime);
+
+         if (model.getSoundStatus()) {
+
+             handler.postDelayed(makePiep, systemTime);
+             systemTime = systemTime + alg.getEmptytime();
+         }
+
+         //update the index
+         index++;
+     }while(index < lastIndex);
 
 
 
 
     }
+
+
+
+    final Runnable triaDownLight = new Runnable() {
+        @Override
+        public void run() {
+
+            runImg.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+
+
+                    runImg.setContentView(model.getTriangleLightDownView());
+                }
+            });
+
+        }
+    };
+    final   Runnable triaDown = new Runnable() {
+        @Override
+        public void run() {
+
+            runImg.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+
+                    runImg.setContentView(model.getTriangleDownView());
+
+
+                }
+            });
+        }
+    };
+
+
+    final   Runnable triaUpLight = new Runnable() {
+        @Override
+        public void run() {
+
+            runImg.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+
+                    runImg.setContentView(model.getTriangleLightUpView());
+
+
+                }
+            });
+        }
+    };
+
+
+
+    final   Runnable triaUp = new Runnable() {
+        @Override
+        public void run() {
+
+            runImg.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+
+                    runImg.setContentView(model.getTriangleUpView());
+
+
+                }
+            });
+        }
+    };
+
+    final   Runnable empty = new Runnable() {
+        @Override
+        public void run() {
+
+            runImg.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+
+                    runImg.setContentView(model.getImageEmptyView());
+
+
+                }
+            });
+        }
+    };
+
+    final Runnable makePiep = new Runnable() {
+        @Override
+        public void run() {
+
+            runImg.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+
+
+                    ToneGenerator toneGen1 = new ToneGenerator(AudioManager.STREAM_ALARM, 1000);
+                    toneGen1.startTone(ToneGenerator.TONE_CDMA_PIP,150);
+
+                }
+            });
+        }
+    };
 }

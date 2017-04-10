@@ -29,6 +29,7 @@ public class Algorithm {
      *              0 means all triangles Down 1 means all triangles Up
      */
     public Algorithm(int entiretime, int lightUpTime, int triaTime, int emptytime, double ratio) {
+
         this.entiretime = entiretime;
         this.lightUpTime = lightUpTime;
         this.triaTime = triaTime;
@@ -105,6 +106,22 @@ public class Algorithm {
 
     }
 
+
+    public int getEntiretime() {
+        return entiretime;
+    }
+
+    public int getLightUpTime() {
+        return lightUpTime;
+    }
+
+    public int getTriaTime() {
+        return triaTime;
+    }
+
+    public int getEmptytime() {
+        return emptytime;
+    }
 
 
 }

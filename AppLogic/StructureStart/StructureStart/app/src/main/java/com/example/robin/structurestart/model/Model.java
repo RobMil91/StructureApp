@@ -26,6 +26,8 @@ public class Model {
     private   Paint triangleDownLightPaint;
 
     private Context context;
+   private boolean soundOn;
+
     /**
      * Viewclasses
      */
@@ -36,7 +38,7 @@ public class Model {
     private ViewEmpty viewEmpty;
 
 
-    public Model (Context context, Paint backgroundPaint, Paint linePaint, Paint trianglePaintUp, Paint trianglePaintDown, Paint triangleUpLightPaint, Paint triangleDownLightPaint) {
+    public Model (Context context, Paint backgroundPaint, Paint linePaint, Paint trianglePaintUp, Paint trianglePaintDown, Paint triangleUpLightPaint, Paint triangleDownLightPaint, boolean sound) {
 
         this.context = context;
         this.backgroundPaint = backgroundPaint;
@@ -45,6 +47,7 @@ public class Model {
         this.triangleDownPaint = trianglePaintDown;
         this.triangleUpLightPaint = triangleUpLightPaint;
         this.triangleDownLightPaint = triangleDownLightPaint;
+        this.soundOn = sound;
         createModel();
 
     }
@@ -85,4 +88,6 @@ public class Model {
     public View getTriangleLightDownView() {
         return triangleLightDown;
     }
+
+    public boolean getSoundStatus() { return soundOn;}
 }
