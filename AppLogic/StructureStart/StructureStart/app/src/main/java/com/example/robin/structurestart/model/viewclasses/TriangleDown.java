@@ -2,6 +2,7 @@ package com.example.robin.structurestart.model.viewclasses;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Point;
@@ -46,7 +47,6 @@ import android.view.View;
         int screenWidth = canvas.getWidth();
         int screenHeight = canvas.getHeight();
 
-<<<<<<< HEAD
         //init paint
         Paint paintBackground = new Paint();
         Paint paintFill = new Paint();
@@ -60,11 +60,7 @@ import android.view.View;
          * making the frame for the triangle additions
          */
         paintFill.setStrokeWidth(20);
-        paintFill.setColor(Color.YELLOW);
-     //   paintFill.setStyle(Paint.Style.FILL_AND_STROKE);
 
-        //the hell why? what is this?
-     //   paintFill.setAntiAlias(true);
 
 
         /**
@@ -72,7 +68,6 @@ import android.view.View;
          */
         Point a = new Point(screenWidth / 2 + 100, screenHeight / 2);
         Point b = new Point(screenWidth / 2 - 100, screenHeight / 2);
-=======
         //iniate the paints
         linePaint.setStrokeWidth(4);
         linePaint.setAntiAlias(true); //for smoothing edges!
@@ -94,8 +89,6 @@ import android.view.View;
 
         }
 
-
-
         drawOuterFrame(canvas, screenHeight, screenWidth);
 
     }
@@ -112,7 +105,6 @@ import android.view.View;
 
         Point a = new Point(screenWidth / 2 - 100, screenHeight / 2);
         Point b = new Point(screenWidth / 2 + 100, screenHeight / 2);
->>>>>>> temp
         Point c = new Point(screenWidth / 2, screenHeight / 2 + 100);
 
         //points of inner triangle
@@ -122,23 +114,19 @@ import android.view.View;
 
         //path for outer line triangle
         Path path = new Path();
-     //   path.setFillType(Path.FillType.EVEN_ODD);
+        path.setFillType(Path.FillType.EVEN_ODD);
 
         path.moveTo(a.x,a.y);
         path.lineTo(b.x, b.y);
         path.lineTo(c.x, c.y);
         path.lineTo(a.x, a.y);
-<<<<<<< HEAD
-/*
-=======
-
 
         //path for inner triangle with d e f instead of a' b' c'
->>>>>>> temp
+
         path.moveTo(d.x,d.y);
         path.lineTo(e.x, e.y);
         path.lineTo(f.x, f.y);
-        path.lineTo(d.x, d.y); */
+        path.lineTo(d.x, d.y);
         path.close();
 
         canvas.drawPath(path, trianglePaint);

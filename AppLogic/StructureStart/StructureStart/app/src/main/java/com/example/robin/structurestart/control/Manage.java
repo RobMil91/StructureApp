@@ -52,6 +52,7 @@ public class Manage {
 
     /**
      * Method to get the current values from the subjects
+     * has to be adjusted for future values
      */
     public void update(int entiretime) {
 

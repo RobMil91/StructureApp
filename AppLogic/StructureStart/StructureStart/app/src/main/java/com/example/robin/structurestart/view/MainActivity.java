@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         entiretime = Integer.parseInt(message);
         //notify the manager to start??
         //better when editText is manipulated to change !!!!!!!!!!!!!!!-------
-        notifyManager();
+      //  notifyManager();
 
 
 
