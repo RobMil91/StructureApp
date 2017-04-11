@@ -33,9 +33,11 @@ public class StartActivity extends AppCompatActivity {
 
 
         EditText editText = (EditText) findViewById(R.id.timeText);
+        //has to be checked here for input mistakes!!!!!!!!!!!!!!!!!!!!--------!
         String message = editText.getText().toString();
+        //      intent.putExtra(EXTRA_MESSAGE, message);
 
-        //has to be checked here for input mistakes!!!!!!!!!!!!!!!!!!!!--------
+
         entiretime = Integer.parseInt(message);
         //notify the manager to start??
         //better when editText is manipulated to change !!!!!!!!!!!!!!!-------
@@ -43,10 +45,8 @@ public class StartActivity extends AppCompatActivity {
 
 
 
-        //      intent.putExtra(EXTRA_MESSAGE, message);
 
         startActivity(intent);
-
     }
 
     public void hitOption(View v) {

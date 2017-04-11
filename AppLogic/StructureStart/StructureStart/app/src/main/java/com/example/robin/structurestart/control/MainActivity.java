@@ -19,10 +19,18 @@ import com.example.robin.structurestart.view.StartActivity;
 public class MainActivity extends AppCompatActivity {
 
 
-
+    StartActivity startActivity;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        
+        StartActivity startActivity = new StartActivity();
+        //all activities are Intends!
+        OptionsAcitvity optAct = new OptionsAcitvity();
+        Manage manager = new Manage(startActivity, optAct);
+
+
 
         Intent intent = new Intent(this, StartActivity.class);
 

@@ -15,6 +15,7 @@ public class Manage {
     private Algorithm alg;
     private Model model;
 
+
     private int entiretime;
 
     //subjects
@@ -22,8 +23,13 @@ public class Manage {
     private OptionsAcitvity optAct;
 
 
-
-    public Manage(Model model, ImageSwitch imgSwitch, Algorithm alg, StartActivity startAct, OptionsAcitvity optAct) {
+    /**
+     * ,  has to be included
+     * the other parameterslike alg and model have to be initated without comming into
+     * this class, the will be filled here with the infos of the other two classes
+     * @param startAct
+     */
+    public Manage( StartActivity startAct, OptionsAcitvity optAct) {
 
         this.startAct = startAct;
         startAct.registerObserver(this);
@@ -55,6 +61,14 @@ public class Manage {
 
         this.entiretime = entiretime;
 
+    }
+
+    /**
+     * Getter for the algorithm?
+     * @return the runtime of the sequenze
+     */
+    public int getEntiretime() {
+        return entiretime;
     }
 
 
