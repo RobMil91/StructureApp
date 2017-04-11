@@ -10,10 +10,7 @@ import android.widget.EditText;
 import com.example.robin.structurestart.R;
 import com.example.robin.structurestart.control.Manage;
 
-/**
- * Subject of the Manage class
- */
-public class MainActivity extends AppCompatActivity {
+public class StartActivity extends AppCompatActivity {
 
 
     private int entiretime;
@@ -24,10 +21,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
-        setContentView(R.layout.activity_main);
-
+        setContentView(R.layout.start_page);
     }
 
 
@@ -45,11 +39,11 @@ public class MainActivity extends AppCompatActivity {
         entiretime = Integer.parseInt(message);
         //notify the manager to start??
         //better when editText is manipulated to change !!!!!!!!!!!!!!!-------
-      //  notifyManager();
+        //  notifyManager();
 
 
 
-  //      intent.putExtra(EXTRA_MESSAGE, message);
+        //      intent.putExtra(EXTRA_MESSAGE, message);
 
         startActivity(intent);
 
@@ -87,5 +81,4 @@ public class MainActivity extends AppCompatActivity {
 
         manager.update(entiretime);
     }
-
 }

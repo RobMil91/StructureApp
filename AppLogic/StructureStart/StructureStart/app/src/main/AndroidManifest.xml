@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.MainActivity">
+        <activity android:name=".control.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,7 +23,8 @@
         <activity
             android:name=".view.OptionsActivity"
             android:label="@string/title_activity_options" />
-        <activity android:name=".view.OptionsAcitvity"></activity>
+        <activity android:name=".view.OptionsAcitvity" />
+        <activity android:name=".view.StartActivity"></activity>
     </application>
 
 </manifest>
