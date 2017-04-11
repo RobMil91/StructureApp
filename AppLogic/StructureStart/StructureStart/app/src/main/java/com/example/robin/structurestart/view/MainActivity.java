@@ -41,19 +41,15 @@ public class MainActivity extends AppCompatActivity {
         EditText editText = (EditText) findViewById(R.id.timeText);
         String message = editText.getText().toString();
 
-        //has to be checked here for input mistakes!!!!!!!!!!!!!!!!!!!!
+        //has to be checked here for input mistakes!!!!!!!!!!!!!!!!!!!!--------
         entiretime = Integer.parseInt(message);
-        manager.update(entiretime);
+        //notify the manager to start??
+        //better when editText is manipulated to change !!!!!!!!!!!!!!!-------
+        notifyManager();
+
+
+
   //      intent.putExtra(EXTRA_MESSAGE, message);
-
-
-        /*
-//get rate of the first text edit and put at extra Rate
-        EditText editTextRate = (EditText) findViewById(R.id.editText2);
-        String message2 = editTextRate.getText().toString();
-        intent.putExtra(EXTRA_RATE, message2);
-*/
-
 
         startActivity(intent);
 
@@ -71,6 +67,25 @@ public class MainActivity extends AppCompatActivity {
 
     public int getEntiretime() {
         return entiretime;
+    }
+
+    /**
+     * Only register the one intended Observer for this class
+     * @param manager
+     */
+    public void registerObserver(Manage manager) {
+
+        this.manager = manager;
+
+    }
+
+    /**
+     * Notify Method
+     */
+    public void notifyManager() {
+
+
+        manager.update(entiretime);
     }
 
 }

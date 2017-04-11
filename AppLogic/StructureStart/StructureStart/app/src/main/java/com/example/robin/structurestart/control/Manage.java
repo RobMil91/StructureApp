@@ -1,7 +1,12 @@
 package com.example.robin.structurestart.control;
 
+import android.app.Activity;
+
 import com.example.robin.structurestart.model.Algorithm;
 import com.example.robin.structurestart.model.Model;
+import com.example.robin.structurestart.view.MainActivity;
+import com.example.robin.structurestart.view.OptionsAcitvity;
+import com.example.robin.structurestart.view.RunActivity;
 
 /**
  * Observer of the OptionsAcitivity and Main Activity
@@ -15,10 +20,21 @@ public class Manage {
 
     private int entiretime;
 
+    //subjects
+    private MainActivity mainAct;
+    private OptionsAcitvity optAct;
 
 
-    public Manage(Model model, ImageSwitch imgSwitch, Algorithm alg) {
 
+    public Manage(Model model, ImageSwitch imgSwitch, Algorithm alg, MainActivity mainAct, OptionsAcitvity optAct) {
+
+        this.mainAct = mainAct;
+        mainAct.registerObserver(this);
+
+        /* //code to be implemented
+        this.optAct = optAct;
+        optAct.registerObserver(this);
+        */
 
     }
 
