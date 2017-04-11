@@ -13,6 +13,8 @@ public class Manage {
     private Algorithm alg;
     private Model model;
 
+    private int entiretime;
+
 
 
     public Manage(Model model, ImageSwitch imgSwitch, Algorithm alg) {
@@ -24,7 +26,7 @@ public class Manage {
 
     public ImageSwitch getImageSwitch() {
 
-        update();
+
 
 
         //todo
@@ -35,8 +37,9 @@ public class Manage {
     /**
      * Method to get the current values from the subjects
      */
-    private void update() {
+    public void update(int entiretime) {
 
+        this.entiretime = entiretime;
 
     }
 

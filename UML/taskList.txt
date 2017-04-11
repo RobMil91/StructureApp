@@ -11,11 +11,7 @@ test package call of drawables
 
 create the other view classes
 
-adjust the algorithm class
-
 work on the error with the sound in Prototype1.0
-
-create the 3 package line with model view controll
 
 check input of the textfields
 
@@ -31,7 +27,10 @@ AdvancedOptions.classa
 -change timer 
 -change sound volume!
 (change sound)
--change triangle size
+(-change triangle size)
 -only horizontal?
 -verhältnis up down
+
+
+
 triangle classes have to be sorted in more methods!

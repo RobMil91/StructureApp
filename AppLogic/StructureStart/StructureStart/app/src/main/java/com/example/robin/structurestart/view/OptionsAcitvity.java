@@ -12,6 +12,12 @@ import com.example.robin.structurestart.R;
  */
 public class OptionsAcitvity extends AppCompatActivity {
 
+    //subject attributes to be observed
+    private double ratio;
+    private boolean soundOn;
+    private boolean horizontal;
+    private boolean nightMode;
+
 
 
     @Override

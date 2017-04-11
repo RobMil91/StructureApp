@@ -8,26 +8,25 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.robin.structurestart.R;
+import com.example.robin.structurestart.control.Manage;
 
 /**
  * Subject of the Manage class
  */
 public class MainActivity extends AppCompatActivity {
 
+
+    private int entiretime;
+
+    //Observer
+    private Manage manager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
 
-
-
-//set the basic visual gui for start
         setContentView(R.layout.activity_main);
-        //create intent for the RunActivity
-     //   Intent intent = new Intent(this, RunActivity.class);
-
-        //start the run activity
-    //    startActivity(intent);
 
     }
 
@@ -38,11 +37,15 @@ public class MainActivity extends AppCompatActivity {
         Button buttonInLayout = (Button)(findViewById(R.id.buttonStart));
 
 
-/*get entire duration 1
-        EditText editText = (EditText) findViewById(R.id.editText);
+
+        EditText editText = (EditText) findViewById(R.id.timeText);
         String message = editText.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message);
-        */
+
+        //has to be checked here for input mistakes!!!!!!!!!!!!!!!!!!!!
+        entiretime = Integer.parseInt(message);
+        manager.update(entiretime);
+  //      intent.putExtra(EXTRA_MESSAGE, message);
+
 
         /*
 //get rate of the first text edit and put at extra Rate
@@ -63,4 +66,11 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+
+
+    public int getEntiretime() {
+        return entiretime;
+    }
+
 }

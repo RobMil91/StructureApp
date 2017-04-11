@@ -1,6 +1,7 @@
 package com.example.robin.structurestart.view;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.Bundle;
@@ -22,6 +23,8 @@ public class RunActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
 
         Paint paintBackground = new Paint();
@@ -53,7 +56,7 @@ public class RunActivity extends AppCompatActivity {
 
 
 
-
+       // setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
 
 
