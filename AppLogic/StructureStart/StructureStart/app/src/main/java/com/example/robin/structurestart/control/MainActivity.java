@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        
+
         StartActivity startActivity = new StartActivity();
         //all activities are Intends!
         OptionsAcitvity optAct = new OptionsAcitvity();
