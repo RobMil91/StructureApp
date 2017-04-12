@@ -82,7 +82,7 @@ public class ImageSwitch {
          systemTime = systemTime + alg.getTriaTime();
          handler.postDelayed(empty, systemTime);
 
-         if (model.getSoundStatus()) {
+         if (model.getSoundStatus() ) {
 
              handler.postDelayed(makePiep, systemTime);
              systemTime = systemTime + alg.getEmptytime();
@@ -90,7 +90,7 @@ public class ImageSwitch {
 
          //update the index
          index++;
-     }while(index < lastIndex);
+     }while(index < lastIndex );
 
         handler.postDelayed(quit, systemTime);
 
@@ -212,4 +212,6 @@ public class ImageSwitch {
 
         }
     };
+
+
 }

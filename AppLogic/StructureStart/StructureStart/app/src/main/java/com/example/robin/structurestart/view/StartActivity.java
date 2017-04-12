@@ -53,6 +53,7 @@ public class StartActivity extends AppCompatActivity{
 
 
         startActivity(intent);
+
     }
 
     public void hitOption(View v) {
@@ -65,26 +66,8 @@ public class StartActivity extends AppCompatActivity{
 
 
 
-    public int getEntiretime() {
-        return entiretime;
-    }
-
-    /**
-     * Only register the one intended Observer for this class
-     * @param manager
-     */
-    public void registerObserver(Manage manager) {
-
-        this.manager = manager;
-
-    }
-
-    /**
-     * Notify Method
-     */
-    public void notifyManager() {
 
 
-        manager.update(entiretime);
-    }
+
+
 }

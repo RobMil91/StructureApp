@@ -6,6 +6,9 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.KeyEvent;
+import android.view.WindowManager;
 
 import com.example.robin.structurestart.control.ImageSwitch;
 import com.example.robin.structurestart.control.MainActivity;
@@ -17,6 +20,7 @@ import com.example.robin.structurestart.model.viewclasses.ViewEmpty;
 
 public class RunActivity extends AppCompatActivity {
 
+    public static final String LOG_TAG = "myLogs";
 
     //class which is responsible for the switiching
     ImageSwitch imageSwitch;
@@ -26,8 +30,10 @@ public class RunActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
 
-        super.onCreate(savedInstanceState);
+      super.onCreate(savedInstanceState);
 
+
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         Paint paintBackground = new Paint();
         paintBackground.setColor(Color.BLUE);
 
@@ -81,6 +87,18 @@ public class RunActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
 */
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)
+    {
+        if ((keyCode == KeyEvent.KEYCODE_BACK))
+        {
+            Log.e(LOG_TAG,"I pressed the back Button");
+            //quick effective bad fix apparently
+            System.exit(1);
+        }
+        return super.onKeyDown(keyCode, event);
     }
 
 }
