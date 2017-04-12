@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.example.robin.structurestart.control.ImageSwitch;
+import com.example.robin.structurestart.control.MainActivity;
 import com.example.robin.structurestart.model.Algorithm;
 import com.example.robin.structurestart.model.Model;
 import com.example.robin.structurestart.model.viewclasses.TriangleDown;
@@ -45,8 +46,19 @@ public class RunActivity extends AppCompatActivity {
         paintFrame.setColor(Color.BLACK);
 
 
+        //get the entire time from the start class
+        Intent intent = getIntent();
+        String entiretime = intent.getStringExtra(StartActivity.EXTRA_MESSAGE);
+
+        //parse the time from StartActivity and calculate the micro seconds
+       int entTime = Integer.parseInt(entiretime) * 60 * 1000;
+
+        //put the entTime integer into the algorithm
+        Algorithm alg = new Algorithm(entTime, 500, 7500, 4000, 0.5);
+
+
         Model model = new Model(this, paintBackground, paintFrame, paintFillUp, paintFillDown, lightSeq, lightSeq, true);
-        Algorithm alg = new Algorithm(60000, 500, 7500, 4000, 0.5);
+
         //just test stub
         imageSwitch = new ImageSwitch(this, model, alg);
     //  final  ViewLightUp viewLightUp = new ViewLightUp(this);

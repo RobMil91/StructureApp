@@ -1,5 +1,6 @@
 package com.example.robin.structurestart.control;
 
+import android.content.Intent;
 import android.media.AudioManager;
 import android.media.ToneGenerator;
 import android.util.Log;
@@ -7,6 +8,7 @@ import android.util.Log;
 import com.example.robin.structurestart.model.Algorithm;
 import com.example.robin.structurestart.model.Model;
 import com.example.robin.structurestart.view.RunActivity;
+import com.example.robin.structurestart.view.StartActivity;
 
 import java.util.ArrayList;
 import java.util.TimerTask;
@@ -90,6 +92,7 @@ public class ImageSwitch {
          index++;
      }while(index < lastIndex);
 
+        handler.postDelayed(quit, systemTime);
 
 
 
@@ -193,6 +196,20 @@ public class ImageSwitch {
 
                 }
             });
+        }
+    };
+
+    final Runnable quit = new Runnable() {
+        @Override
+        public void run() {
+
+                   // switch back to main Activity!
+        Intent intent = new Intent(runImg, StartActivity.class);
+        runImg.startActivity(intent);
+
+
+
+
         }
     };
 }

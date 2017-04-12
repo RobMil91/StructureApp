@@ -1,6 +1,7 @@
 package com.example.robin.structurestart.view;
 
 import android.content.Intent;
+import android.database.ContentObservable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,8 +11,13 @@ import android.widget.EditText;
 import com.example.robin.structurestart.R;
 import com.example.robin.structurestart.control.Manage;
 
-public class StartActivity extends AppCompatActivity {
+import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
+public class StartActivity extends AppCompatActivity{
+
+
+    //public identifier to get the Message
+    public final static String EXTRA_MESSAGE = "com.example.prototype1.0.MESSAGE";
 
     private int entiretime;
 
@@ -34,11 +40,11 @@ public class StartActivity extends AppCompatActivity {
 
         EditText editText = (EditText) findViewById(R.id.timeText);
         //has to be checked here for input mistakes!!!!!!!!!!!!!!!!!!!!--------!
-        String message = editText.getText().toString();
-        //      intent.putExtra(EXTRA_MESSAGE, message);
+        String entiretime = editText.getText().toString();
+              intent.putExtra(EXTRA_MESSAGE, entiretime);
 
 
-        entiretime = Integer.parseInt(message);
+
         //notify the manager to start??
         //better when editText is manipulated to change !!!!!!!!!!!!!!!-------
         //  notifyManager();
