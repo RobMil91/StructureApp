@@ -52,8 +52,6 @@ public class RunActivity extends AppCompatActivity {
         Algorithm alg = new Algorithm(entTime, 500, 7500, 4000, 0.5);
 
 
-
-
         manager = new Manage();
         manager.createStandartModel(this);
 
