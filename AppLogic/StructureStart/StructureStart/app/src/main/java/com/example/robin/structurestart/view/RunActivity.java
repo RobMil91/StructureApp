@@ -12,6 +12,7 @@ import android.view.WindowManager;
 
 import com.example.robin.structurestart.control.ImageSwitch;
 import com.example.robin.structurestart.control.MainActivity;
+import com.example.robin.structurestart.control.Manage;
 import com.example.robin.structurestart.model.Algorithm;
 import com.example.robin.structurestart.model.Model;
 import com.example.robin.structurestart.model.viewclasses.TriangleDown;
@@ -25,6 +26,7 @@ public class RunActivity extends AppCompatActivity {
     //class which is responsible for the switiching
     ImageSwitch imageSwitch;
     Model model;
+    private Manage manager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,24 +39,6 @@ public class RunActivity extends AppCompatActivity {
 
 
 
-        Paint paintBackground = new Paint();
-        paintBackground.setColor(Color.parseColor("#5659bb"));
-  //      paintBackground.setARGB(50, 103, 118, 202);
-
-
-        //triangle Color
-        Paint paintFillUp = new Paint();
-        paintFillUp.setColor(Color.parseColor("#a2abf6"));
-
-        Paint paintFillDown = new Paint();
-        paintFillDown.setColor(Color.parseColor("#f87f80"));
-
-        Paint lightSeq = new Paint();
-        lightSeq.setColor(Color.parseColor("#ecfa00"));
-
-
-        Paint paintFrame = new Paint();
-        paintFrame.setColor(Color.BLACK);
 
 
         //get the entire time from the start class
@@ -68,12 +52,16 @@ public class RunActivity extends AppCompatActivity {
         Algorithm alg = new Algorithm(entTime, 500, 7500, 4000, 0.5);
 
 
-        Model model = new Model(this, paintBackground, paintFrame, paintFillUp, paintFillDown, lightSeq, lightSeq, true);
+
+
+        manager = new Manage();
+        manager.createStandartModel(this);
 
         //just test stub
-        imageSwitch = new ImageSwitch(this, model, alg);
+        imageSwitch = new ImageSwitch(this, manager.getModel(), alg);
     //  final  ViewLightUp viewLightUp = new ViewLightUp(this);
      //   final TriangleUp viewTriangleUp = new TriangleUp(this);
+
 
 
 
@@ -83,15 +71,11 @@ public class RunActivity extends AppCompatActivity {
 
 
 
-        setContentView(model.getImageEmptyView());
+     //   setContentView(model.getImageEmptyView());
         //for testing of image not included
         imageSwitch.seqeunzstart();
 
 
-        /* switch back to main Activity!
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-*/
     }
 
     @Override

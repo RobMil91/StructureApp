@@ -62,7 +62,7 @@ public class Model {
         //create triangle up without fill
         triangleUp = new TriangleUp(context, backgroundPaint, linePaint, triangleUpPaint, triangleUpLightPaint, false);
         //create full triangle for light up sequenze
-        triangleLightUp = new TriangleUp(context, backgroundPaint, linePaint, triangleUpPaint, triangleUpLightPaint, true);
+        triangleLightUp = new TriangleUp(context, backgroundPaint, linePaint,triangleUpPaint,  triangleUpLightPaint, true);
         //empty view
         viewEmpty = new ViewEmpty(context, backgroundPaint);
 
