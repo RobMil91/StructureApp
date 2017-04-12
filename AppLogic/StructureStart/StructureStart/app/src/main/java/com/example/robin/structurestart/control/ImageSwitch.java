@@ -23,6 +23,7 @@ public class ImageSwitch {
     private Model model;
    private Algorithm alg;
  private RunActivity runImg;
+    public static boolean runningState;
 
     /**
      *
@@ -34,6 +35,7 @@ public class ImageSwitch {
         this.runImg = runImg;
         this.model = model;
         this.alg = alg;
+        this.runningState = true;
 
     }
 
@@ -82,15 +84,17 @@ public class ImageSwitch {
          systemTime = systemTime + alg.getTriaTime();
          handler.postDelayed(empty, systemTime);
 
-         if (model.getSoundStatus() ) {
+         if (model.getSoundStatus() && runningState) {
 
              handler.postDelayed(makePiep, systemTime);
              systemTime = systemTime + alg.getEmptytime();
          }
 
+
+
          //update the index
          index++;
-     }while(index < lastIndex );
+     }while(index < lastIndex && runningState);
 
         handler.postDelayed(quit, systemTime);
 
@@ -202,7 +206,6 @@ public class ImageSwitch {
     final Runnable quit = new Runnable() {
         @Override
         public void run() {
-
                    // switch back to main Activity!
         Intent intent = new Intent(runImg, StartActivity.class);
         runImg.startActivity(intent);
@@ -212,6 +215,17 @@ public class ImageSwitch {
 
         }
     };
+
+    /**
+     * Use boolean to halt the while loop?
+     */
+    public void seqeunzeStop() {
+
+
+
+        runImg.runOnUiThread(quit);
+      //  System.exit(1);
+    }
 
 
 }
