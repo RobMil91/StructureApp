@@ -20,6 +20,7 @@ import android.view.View;
     private Paint backgroundPaint;
     private Paint linePaint;
     private Paint trianglePaint;
+    private Paint triangleLightPaint;
     private Boolean triangleFilled;
 
     /**
@@ -30,11 +31,12 @@ import android.view.View;
      * @param trianglePaint color of the triangle
      * @param triangleFilled boolean if the triangle should be filled
      */
-    public TriangleUp(Context context, Paint backgroundPaint, Paint linePaint, Paint trianglePaint, Boolean triangleFilled) {
+    public TriangleUp(Context context, Paint backgroundPaint, Paint linePaint, Paint trianglePaint,Paint triangleLightPaint, Boolean triangleFilled) {
         super(context);
         this.backgroundPaint = backgroundPaint;
         this.linePaint = linePaint;
         this.trianglePaint = trianglePaint;
+        this.triangleLightPaint = triangleLightPaint;
         this.triangleFilled = triangleFilled;
     }
 
@@ -118,6 +120,10 @@ import android.view.View;
         Point b = new Point(screenWidth / 2 + 100, screenHeight / 2);
         Point c = new Point(screenWidth / 2, screenHeight / 2 - 100);
 
+        Point d = new Point(screenWidth/2 - 75,screenHeight / 2 - 10);
+        Point e = new Point(screenWidth/2 + 75,screenHeight / 2 - 10);
+        Point f = new Point(screenWidth /  2, screenHeight / 2 - 85);
+
         //path for outer line triangle
         Path path = new Path();
         path.setFillType(Path.FillType.EVEN_ODD);
@@ -126,9 +132,26 @@ import android.view.View;
         path.lineTo(c.x, c.y);
         path.lineTo(a.x, a.y);
 
+        path.moveTo(d.x,d.y);
+        path.lineTo(e.x, e.y);
+        path.lineTo(f.x, f.y);
+        path.lineTo(d.x, d.y);
         path.close();
 
+        //draw inner triangle
         canvas.drawPath(path, trianglePaint);
+
+        //fill the empty part
+
+        Path innerPath = new Path();
+
+        innerPath.moveTo(d.x,d.y);
+        innerPath.lineTo(e.x, e.y);
+        innerPath.lineTo(f.x, f.y);
+        innerPath.lineTo(d.x, d.y);
+        innerPath.close();
+
+        canvas.drawPath(innerPath, triangleLightPaint);
 
 
     }

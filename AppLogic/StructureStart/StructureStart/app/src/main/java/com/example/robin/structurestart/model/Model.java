@@ -56,13 +56,13 @@ public class Model {
     public void createModel() {
 
         //create Empty TriangleDown -> filled empty
-        triangleDown = new TriangleDown(context, backgroundPaint, linePaint, triangleDownPaint, false);
+        triangleDown = new TriangleDown(context, backgroundPaint, linePaint, triangleDownPaint, triangleDownLightPaint, false);
         //create FullTriangle for Light Down Sequenze
-        triangleLightDown = new TriangleDown(context, backgroundPaint, linePaint, triangleDownLightPaint, true);
+        triangleLightDown = new TriangleDown(context, backgroundPaint, linePaint, triangleDownPaint, triangleDownLightPaint, true);
         //create triangle up without fill
-        triangleUp = new TriangleUp(context, backgroundPaint, linePaint, triangleUpPaint, false);
+        triangleUp = new TriangleUp(context, backgroundPaint, linePaint, triangleUpPaint, triangleUpLightPaint, false);
         //create full triangle for light up sequenze
-        triangleLightUp = new TriangleUp(context, backgroundPaint, linePaint, triangleUpLightPaint, true);
+        triangleLightUp = new TriangleUp(context, backgroundPaint, linePaint, triangleUpPaint, triangleUpLightPaint, true);
         //empty view
         viewEmpty = new ViewEmpty(context, backgroundPaint);
 

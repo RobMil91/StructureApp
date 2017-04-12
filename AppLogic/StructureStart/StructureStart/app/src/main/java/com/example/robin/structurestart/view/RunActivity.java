@@ -34,18 +34,23 @@ public class RunActivity extends AppCompatActivity {
 
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+
+
+
         Paint paintBackground = new Paint();
-        paintBackground.setColor(Color.BLUE);
+        paintBackground.setColor(Color.parseColor("#5659bb"));
+  //      paintBackground.setARGB(50, 103, 118, 202);
+
 
         //triangle Color
         Paint paintFillUp = new Paint();
-        paintFillUp.setColor(Color.BLUE);
+        paintFillUp.setColor(Color.parseColor("#a2abf6"));
 
         Paint paintFillDown = new Paint();
-        paintFillDown.setColor(Color.RED);
+        paintFillDown.setColor(Color.parseColor("#f87f80"));
 
         Paint lightSeq = new Paint();
-        lightSeq.setColor(Color.YELLOW);
+        lightSeq.setColor(Color.parseColor("#ecfa00"));
 
 
         Paint paintFrame = new Paint();
