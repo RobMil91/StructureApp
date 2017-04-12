@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.robin.structurestart.R;
+import com.example.robin.structurestart.control.InputControl;
 import com.example.robin.structurestart.control.Manage;
 
 import static android.provider.AlarmClock.EXTRA_MESSAGE;
@@ -40,19 +41,18 @@ public class StartActivity extends AppCompatActivity{
 
         EditText editText = (EditText) findViewById(R.id.timeText);
         //has to be checked here for input mistakes!!!!!!!!!!!!!!!!!!!!--------!
-        String entiretime = editText.getText().toString();
-              intent.putExtra(EXTRA_MESSAGE, entiretime);
+        InputControl inputControl = new InputControl();
+
+        String timeText = editText.getText().toString();
+
+        if(inputControl.time(timeText)) {
+            intent.putExtra(EXTRA_MESSAGE, timeText);
+            startActivity(intent);
+        }
 
 
 
-        //notify the manager to start??
-        //better when editText is manipulated to change !!!!!!!!!!!!!!!-------
-        //  notifyManager();
 
-
-
-
-        startActivity(intent);
 
     }
 

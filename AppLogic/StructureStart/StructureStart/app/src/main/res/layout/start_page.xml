@@ -36,9 +36,10 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="textPersonName"
+                android:inputType="number"
                 android:text="8"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                />
 
             <TextView
                 android:id="@+id/textView3"
