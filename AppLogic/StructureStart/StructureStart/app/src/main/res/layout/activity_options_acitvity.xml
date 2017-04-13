@@ -67,7 +67,7 @@
                 android:visibility="visible" />
 
             <CheckBox
-                android:id="@+id/checkBox"
+                android:id="@+id/checkBoxHor"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_weight="1"
@@ -101,7 +101,7 @@
                 android:visibility="visible" />
 
             <CheckBox
-                android:id="@+id/checkBox"
+                android:id="@+id/checkBoxSound"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_weight="1"

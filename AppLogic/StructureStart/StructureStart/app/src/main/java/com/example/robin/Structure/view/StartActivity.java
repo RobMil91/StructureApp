@@ -11,6 +11,8 @@ import com.example.robin.Structure.R;
 import com.example.robin.Structure.control.InputControl;
 import com.example.robin.Structure.control.Manage;
 
+import static com.example.robin.Structure.view.OptionsAcitvity.EXTRA_RATIO;
+
 public class StartActivity extends AppCompatActivity{
 
 
@@ -44,6 +46,18 @@ public class StartActivity extends AppCompatActivity{
 
         if(inputControl.time(timeText)) {
             intent.putExtra(EXTRA_MESSAGE, timeText);
+
+            Intent intOpt = getIntent();
+
+            Double ratio = intOpt.getDoubleExtra(OptionsAcitvity.EXTRA_RATIO, 0.5);
+            Boolean soundOn = intOpt.getBooleanExtra(OptionsAcitvity.EXTRA_SoundON, true);
+            Boolean horizontal = intOpt.getBooleanExtra(OptionsAcitvity.EXTRA_Orientation, true);
+          //  intent.putExtra(intOpt);
+/*
+            this.intent.putExtra(EXTRA_RATIO, this.ratio);
+            this.intent.putExtra(EXTRA_SoundON, this.soundOn);
+            this.intent.putExtra(EXTRA_Orientation, this.horizontal);
+  */
             startActivity(intent);
         }
 

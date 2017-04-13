@@ -82,7 +82,7 @@ public class RunActivity extends AppCompatActivity {
     {
         if ((keyCode == KeyEvent.KEYCODE_BACK))
         {
-            Log.e(LOG_TAG,"I pressed the back Button");
+         //   Log.e(LOG_TAG,"I pressed the back Button");
             //quick effective bad fix apparently
             System.exit(1);
             imageSwitch.runningState = false;
