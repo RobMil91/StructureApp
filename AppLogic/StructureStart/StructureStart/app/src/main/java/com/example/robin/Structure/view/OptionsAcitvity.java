@@ -74,6 +74,7 @@ public class OptionsAcitvity extends AppCompatActivity {
         this.checksound = this.checkBoxsound.isChecked();
         this.checkHorizontal = this.checkBoxHorizontal.isChecked();
 
+      //  Log.e(LOG_TAG,"current ratio: " + ratio);
         this.intent.putExtra(EXTRA_RATIO, this.ratio);
         this.intent.putExtra(EXTRA_SoundON, this.checksound);
         this.intent.putExtra(EXTRA_Orientation, this.checkHorizontal);

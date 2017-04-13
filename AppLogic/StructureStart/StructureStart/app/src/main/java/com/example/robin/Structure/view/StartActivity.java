@@ -3,6 +3,7 @@ package com.example.robin.Structure.view;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,6 +15,7 @@ import com.example.robin.Structure.control.Manage;
 import static com.example.robin.Structure.view.OptionsAcitvity.EXTRA_Orientation;
 import static com.example.robin.Structure.view.OptionsAcitvity.EXTRA_RATIO;
 import static com.example.robin.Structure.view.OptionsAcitvity.EXTRA_SoundON;
+import static com.example.robin.Structure.view.RunActivity.LOG_TAG;
 
 public class StartActivity extends AppCompatActivity{
 
@@ -79,6 +81,8 @@ public class StartActivity extends AppCompatActivity{
 
 
         intent.putExtra(EXTRA_RATIO, ratio);
+
+     //   Log.e(LOG_TAG,"current ratio: " + ratio);
         intent.putExtra(EXTRA_SoundON, soundOn);
         intent.putExtra(EXTRA_Orientation, horizontal);
     }
@@ -87,5 +91,10 @@ public class StartActivity extends AppCompatActivity{
 
 
 
+    @Override
+    public void onBackPressed() {
+
+        finish();
+    }
 
 }

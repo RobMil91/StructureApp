@@ -52,25 +52,16 @@ public class RunActivity extends AppCompatActivity {
         manager = new Manage();
         manager.createStandartModel(this, soundOn);
 
+        //get the values from DTO of Options
         int minuteTime = Integer.parseInt(entiretime);
-        
         double ratio = optionsDTO.getDoubleExtra(EXTRA_RATIO, 0.5);
         manager.createStandartAlg(minuteTime, ratio);
 
 
         //use manage class model and algorithm to create the imageSwitch
         imageSwitch = new ImageSwitch(this, manager.getModel(), manager.getAlg());
-    //  final  ViewLightUp viewLightUp = new ViewLightUp(this);
-     //   final TriangleUp viewTriangleUp = new TriangleUp(this);
 
 
-
-
-
-
-
-     //   setContentView(model.getImageEmptyView());
-        //for testing of image not included
         imageSwitch.seqeunzstart();
 
 

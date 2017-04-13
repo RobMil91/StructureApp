@@ -123,7 +123,7 @@ public class AlgorithmTest {
     }
 
     @Test
-    public void checkRandom() {
+    public void checkRandom05() {
         Algorithm algorithm1 = new Algorithm(480000, 500, 7500, 4000, 0.5);
         ArrayList<Integer> testArray = algorithm1.getIntList();
 
@@ -134,6 +134,18 @@ public class AlgorithmTest {
 
     }
 
+
+    @Test
+    public void checkRandom02() {
+        Algorithm algorithm1 = new Algorithm(60000, 500, 7500, 4000, 0.2);
+        ArrayList<Integer> testArray = algorithm1.getIntList();
+
+        for (int i = 0; i < 5; i++) {
+            System.out.print(testArray.get(i));
+        }
+
+
+    }
 
 
 }
