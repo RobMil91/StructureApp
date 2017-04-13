@@ -30,9 +30,6 @@ public class OptionsAcitvity extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items);
         dropdown.setAdapter(adapter);
 
-        Spinner dropdown2 = (Spinner)findViewById(R.id.spinner2);
-        String[] items2 = new String[]{"Schwarz", "Weiß", "Blau"};
-        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items);
-        dropdown.setAdapter(adapter);
+
     }
 }

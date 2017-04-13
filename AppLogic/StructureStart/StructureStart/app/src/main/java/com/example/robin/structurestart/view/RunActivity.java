@@ -83,7 +83,7 @@ public class RunActivity extends AppCompatActivity {
         {
             Log.e(LOG_TAG,"I pressed the back Button");
             //quick effective bad fix apparently
-          //  System.exit(1);
+            System.exit(1);
             imageSwitch.runningState = false;
         }
         return super.onKeyDown(keyCode, event);

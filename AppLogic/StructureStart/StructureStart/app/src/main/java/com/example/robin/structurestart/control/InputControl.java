@@ -13,14 +13,9 @@ public class InputControl {
 
     public boolean time(String timeTextView) {
 
-    //   int check = Integer.parseInt(timeTextView);
 
-      //  Pattern p = Pattern.compile("^(1[0-2]|[1-9])$");
-        Pattern p = Pattern.compile("^(1[0-2]|[1-9])$");
-        Matcher m = p.matcher(timeTextView);
-        boolean b = m.matches();
 
-        if (b) {
+        if (timeTextView.matches("([1-9]|1[0-9]|2[0-9])")) {
             return true;
         } else {
 
