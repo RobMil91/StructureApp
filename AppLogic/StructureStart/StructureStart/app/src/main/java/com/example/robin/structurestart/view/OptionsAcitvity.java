@@ -26,6 +26,7 @@ public class OptionsAcitvity extends AppCompatActivity {
         setContentView(R.layout.activity_options_acitvity);
 
         Spinner dropdown = (Spinner)findViewById(R.id.spinner);
+        dropdown.setSelection(0);
         String[] items = new String[]{"50:50", "80:20", "20:80"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items);
         dropdown.setAdapter(adapter);

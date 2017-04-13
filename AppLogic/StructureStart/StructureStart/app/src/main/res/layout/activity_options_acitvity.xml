@@ -16,29 +16,34 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/textRatio"
                 android:layout_width="400dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@android:color/background_light"
+                android:gravity="left|center"
                 android:text="Verhältnis von Dreiecken"
                 android:textAppearance="@style/TextAppearance.AppCompat.Button" />
 
             <Spinner
                 android:id="@+id/spinner"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="50dp"
                 android:layout_weight="1"
                 android:background="@android:color/background_light"
-                android:popupBackground="@android:color/holo_green_dark"
+                android:gravity="center"
+                android:popupBackground="@android:color/darker_gray"
                 android:visibility="visible" />
 
         </LinearLayout>
-
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/black"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -48,17 +53,19 @@
             <TextView
                 android:id="@+id/screenOrientation"
                 android:layout_width="300dp"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:background="@android:color/background_light"
+                android:gravity="left|center"
                 android:text="Bildschirmausrichtung Horizontal"
                 android:textAppearance="@style/TextAppearance.AppCompat.Button" />
 
             <CheckBox
                 android:id="@+id/checkBox"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_weight="1"
                 android:checked="true"
+                android:gravity="center"
                 android:textColorLink="@android:color/darker_gray" />
 
         </LinearLayout>
