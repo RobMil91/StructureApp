@@ -32,7 +32,7 @@ private Model model;
 
 
 
-    public void createStandartModel(RunActivity runActivity) {
+    public void createStandartModel(RunActivity runActivity, boolean soundOn) {
 
         Paint paintBackground = new Paint();
         //random light blue to make it more like the original - real one has picture included
@@ -55,7 +55,7 @@ private Model model;
         Paint paintFrame = new Paint();
         paintFrame.setColor(Color.BLACK);
 
-       model = new Model(runActivity, paintBackground, paintFrame, paintFillUp, paintFillDown, lightSeq, lightSeq, true, 1000);
+       model = new Model(runActivity, paintBackground, paintFrame, paintFillUp, paintFillDown, lightSeq, lightSeq, soundOn, 1000);
 
     }
 

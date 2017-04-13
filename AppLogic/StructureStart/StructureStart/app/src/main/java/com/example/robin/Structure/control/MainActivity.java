@@ -21,8 +21,9 @@ public class MainActivity extends AppCompatActivity {
 
         StartActivity startActivity = new StartActivity();
         //all activities are Intends!
-        OptionsAcitvity optAct = new OptionsAcitvity();
-     //   Manage manager = new Manage(startActivity, optAct);
+
+        Manage manager = new Manage();
+        OptionsAcitvity optAct = new OptionsAcitvity(manager);
 
 
 

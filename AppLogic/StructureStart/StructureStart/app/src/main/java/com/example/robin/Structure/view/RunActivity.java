@@ -35,7 +35,7 @@ public class RunActivity extends AppCompatActivity {
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         }
 
-        //set the window size so you cant see title
+        //set the window size so you cant see title bar for options and so on..
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -55,12 +55,11 @@ public class RunActivity extends AppCompatActivity {
         int minTime = Integer.parseInt(entiretime);
 
         manager = new Manage();
-        manager.createStandartModel(this);
+        manager.createStandartModel(this, true);
         manager.createStandartAlg(minTime, 0.5);
 
 
-
-        //just test stub
+        //use manage class model and algorithm to create the imageSwitch
         imageSwitch = new ImageSwitch(this, manager.getModel(), manager.getAlg());
     //  final  ViewLightUp viewLightUp = new ViewLightUp(this);
      //   final TriangleUp viewTriangleUp = new TriangleUp(this);

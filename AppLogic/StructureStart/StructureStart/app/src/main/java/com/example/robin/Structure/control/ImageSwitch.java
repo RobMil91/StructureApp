@@ -180,7 +180,6 @@ public class ImageSwitch {
 
                     runImg.setContentView(model.getImageEmptyView());
 
-
                 }
             });
         }
@@ -197,6 +196,8 @@ public class ImageSwitch {
                 // tonegenerator use
                  //   ToneGenerator toneGen1 = new ToneGenerator(AudioManager.STREAM_MUSIC, 100);
                   //  toneGen1.startTone(ToneGenerator.TONE_CDMA_PIP,150);
+
+                    //the model SoundVolume is the frequenzy.... physically a disaster...
                   AudioTrack tone = generateTone(model.getSoundVolume(), 100);
                 tone.play();
 
@@ -225,7 +226,7 @@ public class ImageSwitch {
 
 
 
-        runImg.runOnUiThread(quit);
+    //    runImg.runOnUiThread(quit);
       //  System.exit(1);
     }
 
