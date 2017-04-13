@@ -12,6 +12,10 @@ import com.example.robin.Structure.control.ImageSwitch;
 import com.example.robin.Structure.control.Manage;
 import com.example.robin.Structure.model.Model;
 
+import static com.example.robin.Structure.view.OptionsAcitvity.EXTRA_Orientation;
+import static com.example.robin.Structure.view.OptionsAcitvity.EXTRA_RATIO;
+import static com.example.robin.Structure.view.OptionsAcitvity.EXTRA_SoundON;
+
 public class RunActivity extends AppCompatActivity {
 
     public static final String LOG_TAG = "myLogs";
@@ -28,33 +32,30 @@ public class RunActivity extends AppCompatActivity {
       super.onCreate(savedInstanceState);
 
 
-        boolean horizontal = true;
+        adjustScreen();
+
+        //get the DTO from startActivity
+        Intent optionsDTO = getIntent();
+
+        //get the boolean from the optionsclass
+        boolean horizontal = optionsDTO.getBooleanExtra(EXTRA_Orientation, true);
+
         if (horizontal) {
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         }
 
-        //set the window size so you cant see title bar for options and so on..
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        String entiretime = optionsDTO.getStringExtra(StartActivity.EXTRA_TIME);
 
+        boolean soundOn = optionsDTO.getBooleanExtra(EXTRA_SoundON, true);
 
-
-        //keep the screen from going into sleep mode
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-
-
-
-        //get the entire time from the start class
-        Intent intent = getIntent();
-        String entiretime = intent.getStringExtra(StartActivity.EXTRA_TIME);
-
-
-        int minTime = Integer.parseInt(entiretime);
 
         manager = new Manage();
-        manager.createStandartModel(this, true);
-        manager.createStandartAlg(minTime, 0.5);
+        manager.createStandartModel(this, soundOn);
+
+        int minuteTime = Integer.parseInt(entiretime);
+        
+        double ratio = optionsDTO.getDoubleExtra(EXTRA_RATIO, 0.5);
+        manager.createStandartAlg(minuteTime, ratio);
 
 
         //use manage class model and algorithm to create the imageSwitch
@@ -89,5 +90,18 @@ public class RunActivity extends AppCompatActivity {
     }
 
 
+    private void adjustScreen() {
+        //set the window size so you cant see title bar for options and so on..
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        //keep the screen from going into sleep mode
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+
+
+
+
+    }
 
 }

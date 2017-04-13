@@ -21,8 +21,7 @@ public class OptionsAcitvity extends AppCompatActivity {
 
     //subject attributes to be observed
     private double ratio;
-    private boolean soundOn;
-    private boolean horizontal;
+
 
     //todo
   //  private boolean nightMode;
@@ -72,12 +71,12 @@ public class OptionsAcitvity extends AppCompatActivity {
         this.ratio = convertSelectionSpinner(strRatio);
      //   Log.e(LOG_TAG,"current ratio: " + ratio);
 
-        this.soundOn = this.checkBoxsound.isChecked();
+        this.checksound = this.checkBoxsound.isChecked();
         this.checkHorizontal = this.checkBoxHorizontal.isChecked();
 
         this.intent.putExtra(EXTRA_RATIO, this.ratio);
-        this.intent.putExtra(EXTRA_SoundON, this.soundOn);
-        this.intent.putExtra(EXTRA_Orientation, this.horizontal);
+        this.intent.putExtra(EXTRA_SoundON, this.checksound);
+        this.intent.putExtra(EXTRA_Orientation, this.checkHorizontal);
 
         startActivity(intent);
     }
