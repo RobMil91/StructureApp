@@ -1,4 +1,4 @@
-package com.example.robin.structurestart.model;
+package com.example.robin.Structure.model;
 
 
 import org.junit.Test;

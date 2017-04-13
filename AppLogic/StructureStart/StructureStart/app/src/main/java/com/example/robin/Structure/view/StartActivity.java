@@ -1,18 +1,15 @@
-package com.example.robin.structurestart.view;
+package com.example.robin.Structure.view;
 
 import android.content.Intent;
-import android.database.ContentObservable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.robin.structurestart.R;
-import com.example.robin.structurestart.control.InputControl;
-import com.example.robin.structurestart.control.Manage;
-
-import static android.provider.AlarmClock.EXTRA_MESSAGE;
+import com.example.robin.Structure.R;
+import com.example.robin.Structure.control.InputControl;
+import com.example.robin.Structure.control.Manage;
 
 public class StartActivity extends AppCompatActivity{
 

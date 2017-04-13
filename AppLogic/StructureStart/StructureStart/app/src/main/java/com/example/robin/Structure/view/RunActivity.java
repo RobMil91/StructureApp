@@ -1,12 +1,6 @@
-package com.example.robin.structurestart.view;
+package com.example.robin.Structure.view;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.media.AudioManager;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -14,14 +8,10 @@ import android.view.KeyEvent;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.example.robin.structurestart.control.ImageSwitch;
-import com.example.robin.structurestart.control.MainActivity;
-import com.example.robin.structurestart.control.Manage;
-import com.example.robin.structurestart.model.Algorithm;
-import com.example.robin.structurestart.model.Model;
-import com.example.robin.structurestart.model.viewclasses.TriangleDown;
-import com.example.robin.structurestart.model.viewclasses.TriangleUp;
-import com.example.robin.structurestart.model.viewclasses.ViewEmpty;
+import com.example.robin.Structure.control.ImageSwitch;
+import com.example.robin.Structure.control.Manage;
+import com.example.robin.Structure.model.Algorithm;
+import com.example.robin.Structure.model.Model;
 
 public class RunActivity extends AppCompatActivity {
 

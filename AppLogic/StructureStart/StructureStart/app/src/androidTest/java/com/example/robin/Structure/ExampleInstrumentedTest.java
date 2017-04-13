@@ -1,4 +1,4 @@
-package com.example.robin.structurestart;
+package com.example.robin.Structure;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

@@ -1,12 +1,12 @@
-package com.example.robin.structurestart.model;
+package com.example.robin.Structure.model;
 
 import android.content.Context;
 import android.graphics.Paint;
 import android.view.View;
 
-import com.example.robin.structurestart.model.viewclasses.TriangleDown;
-import com.example.robin.structurestart.model.viewclasses.TriangleUp;
-import com.example.robin.structurestart.model.viewclasses.ViewEmpty;
+import com.example.robin.Structure.model.viewclasses.TriangleDown;
+import com.example.robin.Structure.model.viewclasses.TriangleUp;
+import com.example.robin.Structure.model.viewclasses.ViewEmpty;
 
 /**
  * Class to contain all the different view classes

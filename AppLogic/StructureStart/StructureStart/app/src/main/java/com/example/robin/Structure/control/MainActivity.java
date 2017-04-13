@@ -1,17 +1,11 @@
-package com.example.robin.structurestart.control;
+package com.example.robin.Structure.control;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 
-import com.example.robin.structurestart.R;
-import com.example.robin.structurestart.control.Manage;
-import com.example.robin.structurestart.view.OptionsAcitvity;
-import com.example.robin.structurestart.view.RunActivity;
-import com.example.robin.structurestart.view.StartActivity;
+import com.example.robin.Structure.view.OptionsAcitvity;
+import com.example.robin.Structure.view.StartActivity;
 
 /**
  * Subject of the Manage class

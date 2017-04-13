@@ -1,11 +1,11 @@
-package com.example.robin.structurestart.view;
+package com.example.robin.Structure.view;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
-import com.example.robin.structurestart.R;
+import com.example.robin.Structure.R;
 
 /**
  * Subject of the Manage Class

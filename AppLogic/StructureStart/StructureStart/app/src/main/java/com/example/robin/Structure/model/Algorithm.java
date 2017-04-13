@@ -1,9 +1,7 @@
-package com.example.robin.structurestart.model;
+package com.example.robin.Structure.model;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
-import java.util.List;
 
 /**
  * Class to create an Boolean Array for the up and down

@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/background_light"
-    tools:context="com.example.robin.structurestart.control.MainActivity">
+    android:theme="@android:style/Theme.NoTitleBar"
+    tools:context="com.example.robin.Structure.control.MainActivity">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -27,8 +28,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:gravity="center"
                 android:text="Dauer"
-                android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                android:textColor="@android:color/black" />
 
             <EditText
                 android:id="@+id/timeText"
@@ -38,15 +41,16 @@
                 android:ems="10"
                 android:inputType="number"
                 android:text="8"
-                android:textAlignment="center"
-                />
+                android:textAlignment="center" />
 
             <TextView
                 android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="minuten" />
+                android:text="minuten"
+                android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                android:textColor="@android:color/black" />
 
         </LinearLayout>
 
@@ -55,13 +59,11 @@
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
-            <EditText
-                android:id="@+id/editText5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:inputType="textPersonName" />
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/black" />
         </LinearLayout>
 
         <Button
@@ -69,7 +71,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="hitOption"
-            android:text="Options" />
+            android:text="Optionen" />
 
         <Button
             android:id="@+id/buttonStart"

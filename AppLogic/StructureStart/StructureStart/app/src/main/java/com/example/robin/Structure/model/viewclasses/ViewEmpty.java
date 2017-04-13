@@ -1,8 +1,7 @@
-package com.example.robin.structurestart.model.viewclasses;
+package com.example.robin.Structure.model.viewclasses;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Paint;
 import android.view.View;
 

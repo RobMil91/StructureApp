@@ -1,13 +1,11 @@
-package com.example.robin.structurestart.control;
+package com.example.robin.Structure.control;
 
 import android.graphics.Color;
 import android.graphics.Paint;
 
-import com.example.robin.structurestart.model.Algorithm;
-import com.example.robin.structurestart.model.Model;
-import com.example.robin.structurestart.view.OptionsAcitvity;
-import com.example.robin.structurestart.view.RunActivity;
-import com.example.robin.structurestart.view.StartActivity;
+import com.example.robin.Structure.model.Algorithm;
+import com.example.robin.Structure.model.Model;
+import com.example.robin.Structure.view.RunActivity;
 
 /**
  * Class to compress the input from the UI to create

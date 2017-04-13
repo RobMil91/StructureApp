@@ -1,7 +1,4 @@
-package com.example.robin.structurestart.control;
-
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+package com.example.robin.Structure.control;
 
 /**
  * Class to check Input for mistakes

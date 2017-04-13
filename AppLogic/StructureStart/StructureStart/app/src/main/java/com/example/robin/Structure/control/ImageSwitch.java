@@ -1,23 +1,16 @@
-package com.example.robin.structurestart.control;
+package com.example.robin.Structure.control;
 
 import android.content.Intent;
 import android.media.AudioFormat;
 import android.media.AudioManager;
 import android.media.AudioTrack;
-import android.media.MediaPlayer;
-import android.media.Ringtone;
-import android.media.RingtoneManager;
-import android.media.ToneGenerator;
-import android.net.Uri;
-import android.util.Log;
 
-import com.example.robin.structurestart.model.Algorithm;
-import com.example.robin.structurestart.model.Model;
-import com.example.robin.structurestart.view.RunActivity;
-import com.example.robin.structurestart.view.StartActivity;
+import com.example.robin.Structure.model.Algorithm;
+import com.example.robin.Structure.model.Model;
+import com.example.robin.Structure.view.RunActivity;
+import com.example.robin.Structure.view.StartActivity;
 
 import java.util.ArrayList;
-import java.util.TimerTask;
 
 /**
  * Class to switch the images
