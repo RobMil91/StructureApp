@@ -11,13 +11,15 @@ import com.example.robin.Structure.R;
 import com.example.robin.Structure.control.InputControl;
 import com.example.robin.Structure.control.Manage;
 
+import static com.example.robin.Structure.view.OptionsAcitvity.EXTRA_Orientation;
 import static com.example.robin.Structure.view.OptionsAcitvity.EXTRA_RATIO;
+import static com.example.robin.Structure.view.OptionsAcitvity.EXTRA_SoundON;
 
 public class StartActivity extends AppCompatActivity{
 
 
     //public identifier to get the Message
-    public final static String EXTRA_MESSAGE = "com.example.prototype1.0.MESSAGE";
+    public final static String EXTRA_TIME = "com.example.prototype1.0.MESSAGE";
 
     private int entiretime;
 
@@ -45,19 +47,11 @@ public class StartActivity extends AppCompatActivity{
         String timeText = editText.getText().toString();
 
         if(inputControl.time(timeText)) {
-            intent.putExtra(EXTRA_MESSAGE, timeText);
 
-            Intent intOpt = getIntent();
+            intent.putExtra(EXTRA_TIME, timeText);
+            //put all the intent extras from options into the intent for runActivity
+            collectDTO(intent);
 
-            Double ratio = intOpt.getDoubleExtra(OptionsAcitvity.EXTRA_RATIO, 0.5);
-            Boolean soundOn = intOpt.getBooleanExtra(OptionsAcitvity.EXTRA_SoundON, true);
-            Boolean horizontal = intOpt.getBooleanExtra(OptionsAcitvity.EXTRA_Orientation, true);
-          //  intent.putExtra(intOpt);
-/*
-            this.intent.putExtra(EXTRA_RATIO, this.ratio);
-            this.intent.putExtra(EXTRA_SoundON, this.soundOn);
-            this.intent.putExtra(EXTRA_Orientation, this.horizontal);
-  */
             startActivity(intent);
         }
 
@@ -75,6 +69,19 @@ public class StartActivity extends AppCompatActivity{
 
     }
 
+    private void collectDTO(Intent intent) {
+
+        Intent intOpt = getIntent();
+
+        Double ratio = intOpt.getDoubleExtra(OptionsAcitvity.EXTRA_RATIO, 0.5);
+        Boolean soundOn = intOpt.getBooleanExtra(EXTRA_SoundON, true);
+        Boolean horizontal = intOpt.getBooleanExtra(EXTRA_Orientation, true);
+
+
+        intent.putExtra(EXTRA_RATIO, ratio);
+        intent.putExtra(EXTRA_SoundON, soundOn);
+        intent.putExtra(EXTRA_Orientation, horizontal);
+    }
 
 
 

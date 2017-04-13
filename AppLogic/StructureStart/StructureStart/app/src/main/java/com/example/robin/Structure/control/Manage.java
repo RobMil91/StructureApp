@@ -55,7 +55,7 @@ private Model model;
         Paint paintFrame = new Paint();
         paintFrame.setColor(Color.BLACK);
 
-       model = new Model(runActivity, paintBackground, paintFrame, paintFillUp, paintFillDown, lightSeq, lightSeq, soundOn, 1000);
+       model = new Model(runActivity, paintBackground, paintFrame, paintFillUp, paintFillDown, lightSeq, lightSeq, soundOn, 750);
 
     }
 

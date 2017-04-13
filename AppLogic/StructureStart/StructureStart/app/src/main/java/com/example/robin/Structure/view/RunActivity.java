@@ -4,14 +4,12 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Window;
 import android.view.WindowManager;
 
 import com.example.robin.Structure.control.ImageSwitch;
 import com.example.robin.Structure.control.Manage;
-import com.example.robin.Structure.model.Algorithm;
 import com.example.robin.Structure.model.Model;
 
 public class RunActivity extends AppCompatActivity {
@@ -49,7 +47,7 @@ public class RunActivity extends AppCompatActivity {
 
         //get the entire time from the start class
         Intent intent = getIntent();
-        String entiretime = intent.getStringExtra(StartActivity.EXTRA_MESSAGE);
+        String entiretime = intent.getStringExtra(StartActivity.EXTRA_TIME);
 
 
         int minTime = Integer.parseInt(entiretime);
