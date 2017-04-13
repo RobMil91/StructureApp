@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.Window;
 import android.view.WindowManager;
 
 import com.example.robin.structurestart.control.ImageSwitch;
@@ -38,8 +39,16 @@ public class RunActivity extends AppCompatActivity {
       super.onCreate(savedInstanceState);
 
 
+        //set the window size so you cant see title
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+
+
+        //keep the screen from going into sleep mode
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-        
+
 
 
         //get the entire time from the start class
