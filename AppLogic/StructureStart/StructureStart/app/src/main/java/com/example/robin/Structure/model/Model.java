@@ -28,6 +28,10 @@ public class Model {
     private Context context;
    private boolean soundOn;
 
+
+
+    private int soundVolume;
+
     /**
      * Viewclasses
      */
@@ -38,7 +42,7 @@ public class Model {
     private ViewEmpty viewEmpty;
 
 
-    public Model (Context context, Paint backgroundPaint, Paint linePaint, Paint trianglePaintUp, Paint trianglePaintDown, Paint triangleUpLightPaint, Paint triangleDownLightPaint, boolean sound) {
+    public Model (Context context, Paint backgroundPaint, Paint linePaint, Paint trianglePaintUp, Paint trianglePaintDown, Paint triangleUpLightPaint, Paint triangleDownLightPaint, boolean sound, int soundVolume) {
 
         this.context = context;
         this.backgroundPaint = backgroundPaint;
@@ -48,6 +52,7 @@ public class Model {
         this.triangleUpLightPaint = triangleUpLightPaint;
         this.triangleDownLightPaint = triangleDownLightPaint;
         this.soundOn = sound;
+        this.soundVolume = soundVolume;
         createModel();
 
     }
@@ -90,4 +95,8 @@ public class Model {
     }
 
     public boolean getSoundStatus() { return soundOn;}
+
+    public int getSoundVolume() {
+        return soundVolume;
+    }
 }

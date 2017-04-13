@@ -1,6 +1,7 @@
 package com.example.robin.Structure.view;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -29,6 +30,11 @@ public class RunActivity extends AppCompatActivity {
       super.onCreate(savedInstanceState);
 
 
+        boolean horizontal = true;
+        if (horizontal) {
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        }
+
         //set the window size so you cant see title
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
@@ -45,25 +51,23 @@ public class RunActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String entiretime = intent.getStringExtra(StartActivity.EXTRA_MESSAGE);
 
-        //parse the time from StartActivity and calculate the micro seconds
-       int entTime = Integer.parseInt(entiretime) * 60 * 1000;
 
-        //put the entTime integer into the algorithm
-        Algorithm alg = new Algorithm(entTime, 500, 7500, 4000, 0.5);
-
+        int minTime = Integer.parseInt(entiretime);
 
         manager = new Manage();
         manager.createStandartModel(this);
+        manager.createStandartAlg(minTime, 0.5);
 
 
 
         //just test stub
-        imageSwitch = new ImageSwitch(this, manager.getModel(), alg);
+        imageSwitch = new ImageSwitch(this, manager.getModel(), manager.getAlg());
     //  final  ViewLightUp viewLightUp = new ViewLightUp(this);
      //   final TriangleUp viewTriangleUp = new TriangleUp(this);
 
 
-        // setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+
+
 
 
 

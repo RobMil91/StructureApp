@@ -1,6 +1,7 @@
 package com.example.robin.Structure.control;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.media.AudioFormat;
 import android.media.AudioManager;
 import android.media.AudioTrack;
@@ -42,6 +43,8 @@ public class ImageSwitch {
 
     public void seqeunzstart() {
 
+
+
         //start the handler
         this.handler = new android.os.Handler();
 
@@ -78,21 +81,19 @@ public class ImageSwitch {
              //problem
          }
 
-
-
          systemTime = systemTime + alg.getTriaTime();
          handler.postDelayed(empty, systemTime);
 
-         if (model.getSoundStatus() && runningState) {
+         if (model.getSoundStatus()) {
 
              handler.postDelayed(makePiep, systemTime);
-             systemTime = systemTime + alg.getEmptytime();
+
          }
-
-
+         systemTime = systemTime + alg.getEmptytime();
 
          //update the index
          index++;
+
      }while(index < lastIndex && runningState);
 
         handler.postDelayed(quit, systemTime);
@@ -196,7 +197,7 @@ public class ImageSwitch {
                 // tonegenerator use
                  //   ToneGenerator toneGen1 = new ToneGenerator(AudioManager.STREAM_MUSIC, 100);
                   //  toneGen1.startTone(ToneGenerator.TONE_CDMA_PIP,150);
-                  AudioTrack tone = generateTone(1000, 150);
+                  AudioTrack tone = generateTone(model.getSoundVolume(), 100);
                 tone.play();
 
                 }

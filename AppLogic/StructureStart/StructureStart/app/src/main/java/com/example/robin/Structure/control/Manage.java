@@ -13,6 +13,8 @@ import com.example.robin.Structure.view.RunActivity;
  */
 public class Manage {
 
+
+
     private Algorithm alg;
 
 
@@ -53,7 +55,20 @@ private Model model;
         Paint paintFrame = new Paint();
         paintFrame.setColor(Color.BLACK);
 
-       model = new Model(runActivity, paintBackground, paintFrame, paintFillUp, paintFillDown, lightSeq, lightSeq, true);
+       model = new Model(runActivity, paintBackground, paintFrame, paintFillUp, paintFillDown, lightSeq, lightSeq, true, 1000);
+
+    }
+
+
+    /**
+     * std down up and light sequenzes
+     * @param time in minutes
+     * @param ratio 0-1 range of double
+     */
+    public void createStandartAlg(int time, double ratio) {
+
+        int milliSectime = time * 60 * 1000;
+       this.alg = new Algorithm(milliSectime, 500, 7500, 4000, ratio);
 
     }
 
@@ -61,7 +76,9 @@ private Model model;
         return this.model;
     }
 
-
+    public Algorithm getAlg() {
+        return alg;
+    }
 
 
 }
