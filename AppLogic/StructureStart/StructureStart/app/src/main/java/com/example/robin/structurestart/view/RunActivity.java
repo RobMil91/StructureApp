@@ -1,9 +1,12 @@
 package com.example.robin.structurestart.view;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -36,9 +39,7 @@ public class RunActivity extends AppCompatActivity {
 
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-
-
-
+        
 
 
         //get the entire time from the start class
@@ -55,17 +56,15 @@ public class RunActivity extends AppCompatActivity {
         manager = new Manage();
         manager.createStandartModel(this);
 
+
+
         //just test stub
         imageSwitch = new ImageSwitch(this, manager.getModel(), alg);
     //  final  ViewLightUp viewLightUp = new ViewLightUp(this);
      //   final TriangleUp viewTriangleUp = new TriangleUp(this);
 
 
-
-
-
-
-       // setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        // setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
 
 
@@ -88,5 +87,7 @@ public class RunActivity extends AppCompatActivity {
         }
         return super.onKeyDown(keyCode, event);
     }
+
+
 
 }
