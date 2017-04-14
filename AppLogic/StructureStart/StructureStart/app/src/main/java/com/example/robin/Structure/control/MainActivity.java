@@ -13,25 +13,9 @@ import com.example.robin.Structure.view.StartActivity;
 public class MainActivity extends AppCompatActivity {
 
 
-    StartActivity startActivity;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
-        StartActivity startActivity = new StartActivity();
-        //all activities are Intends!
-
-      //  Manage manager = new Manage();
-       // OptionsAcitvity optAct = new OptionsAcitvity(manager);
-
-   //     RunApplication runApp = new RunApplication();
-
-      //  Intent intAppli = new Intent(this, RunApplication.class);
-
-     //  startActivity(intAppli);
-
-
 
 
         Intent intent = new Intent(this, StartActivity.class);
