@@ -81,8 +81,6 @@ public class StartActivity extends AppCompatActivity{
 
 
         intent.putExtra(EXTRA_RATIO, ratio);
-
-     //   Log.e(LOG_TAG,"current ratio: " + ratio);
         intent.putExtra(EXTRA_SoundON, soundOn);
         intent.putExtra(EXTRA_Orientation, horizontal);
     }
@@ -95,6 +93,7 @@ public class StartActivity extends AppCompatActivity{
     public void onBackPressed() {
 
         finish();
+        System.exit(1);
     }
 
 }

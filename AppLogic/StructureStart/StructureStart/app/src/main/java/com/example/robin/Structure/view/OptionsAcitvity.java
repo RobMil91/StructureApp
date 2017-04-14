@@ -80,6 +80,7 @@ public class OptionsAcitvity extends AppCompatActivity {
         this.intent.putExtra(EXTRA_Orientation, this.checkHorizontal);
 
         startActivity(intent);
+        finish();
     }
 
 

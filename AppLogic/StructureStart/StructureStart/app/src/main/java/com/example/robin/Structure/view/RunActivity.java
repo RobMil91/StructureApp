@@ -81,7 +81,7 @@ public class RunActivity extends AppCompatActivity {
     public void onConfigurationChanged(Configuration newConfig) {
 
     }
-*/
+
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event)
@@ -95,6 +95,12 @@ public class RunActivity extends AppCompatActivity {
         }
         return super.onKeyDown(keyCode, event);
     }
+*/
+    @Override
+    public void onBackPressed() {
+        finish();
+        System.exit(1);
+    }
 
 
     private void adjustScreen() {
@@ -105,8 +111,6 @@ public class RunActivity extends AppCompatActivity {
 
         //keep the screen from going into sleep mode
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-
-
 
 
     }
