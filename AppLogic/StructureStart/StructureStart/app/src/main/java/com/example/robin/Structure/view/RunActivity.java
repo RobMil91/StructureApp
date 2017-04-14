@@ -2,6 +2,7 @@ package com.example.robin.Structure.view;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
@@ -42,6 +43,12 @@ public class RunActivity extends AppCompatActivity {
 
         if (horizontal) {
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+
+
+        } else {
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+
         }
 
         String entiretime = optionsDTO.getStringExtra(StartActivity.EXTRA_TIME);
@@ -62,10 +69,19 @@ public class RunActivity extends AppCompatActivity {
         imageSwitch = new ImageSwitch(this, manager.getModel(), manager.getAlg());
 
 
-        imageSwitch.seqeunzstart();
+
+            imageSwitch.seqeunzstart();
+
 
 
     }
+
+    /*
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+
+    }
+*/
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event)
@@ -75,7 +91,7 @@ public class RunActivity extends AppCompatActivity {
          //   Log.e(LOG_TAG,"I pressed the back Button");
             //quick effective bad fix apparently
             System.exit(1);
-            imageSwitch.runningState = false;
+      //      imageSwitch.runningState = false;
         }
         return super.onKeyDown(keyCode, event);
     }

@@ -54,7 +54,11 @@ public class StartActivity extends AppCompatActivity{
             //put all the intent extras from options into the intent for runActivity
             collectDTO(intent);
 
-            startActivity(intent);
+
+            synchronized (this) {
+                startActivity(intent);
+            }
+
         }
 
 
@@ -66,6 +70,7 @@ public class StartActivity extends AppCompatActivity{
     public void hitOption(View v) {
         Intent intent = new Intent(this, OptionsAcitvity.class);
         Button buttonInLayout = (Button)(findViewById(R.id.buttonOptions));
+
         startActivity(intent);
 
 
