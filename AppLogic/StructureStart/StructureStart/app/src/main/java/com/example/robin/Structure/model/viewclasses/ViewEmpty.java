@@ -21,13 +21,14 @@ public class ViewEmpty extends View {
 
     /**
      * Override the onDraw Method to color the background
+     *
      * @param canvas
      */
     @Override
     protected void onDraw(Canvas canvas) {
 
         Paint paintBackground = new Paint();
-       // paintBackground.setColor(backgroundPaint);
+        // paintBackground.setColor(backgroundPaint);
         canvas.drawPaint(backgroundPaint);
     }
 }

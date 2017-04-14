@@ -1,14 +1,13 @@
 package com.example.robin.Structure.control;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
-import com.example.robin.Structure.view.OptionsAcitvity;
 import com.example.robin.Structure.view.StartActivity;
 
 /**
- * Subject of the Manage class
+ * Main Activty which will start the start class
  */
 public class MainActivity extends AppCompatActivity {
 
@@ -26,6 +25,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    /**
+     * Method to close application on backs
+     */
     @Override
     public void onBackPressed() {
 

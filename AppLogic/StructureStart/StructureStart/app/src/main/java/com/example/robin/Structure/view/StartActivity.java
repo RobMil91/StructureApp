@@ -1,77 +1,83 @@
 package com.example.robin.Structure.view;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.robin.Structure.R;
 import com.example.robin.Structure.control.InputControl;
-import com.example.robin.Structure.control.Manage;
 
 import static com.example.robin.Structure.view.OptionsAcitvity.EXTRA_Orientation;
 import static com.example.robin.Structure.view.OptionsAcitvity.EXTRA_RATIO;
 import static com.example.robin.Structure.view.OptionsAcitvity.EXTRA_SoundON;
-import static com.example.robin.Structure.view.RunActivity.LOG_TAG;
 
-public class StartActivity extends AppCompatActivity{
+//needed to listen to Otpions Acitvty
 
+/**
+ * Class to display the start screen of the application
+ */
+public class StartActivity extends AppCompatActivity {
 
     //public identifier to get the Message
-    public final static String EXTRA_TIME = "com.example.prototype1.0.MESSAGE";
+    public final static String EXTRA_TIME = "time";
+    private Intent intent;
 
-    private int entiretime;
 
-    //Observer
-    private Manage manager;
-
+    /**
+     * Method to set the layout
+     *
+     * @param savedInstanceState of last state
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.start_page);
     }
 
+    /**
+     * Method to start runactivty when the startbutton is pushed
+     * * @param v standart parameter
+     */
+    public void startButton(View v) {
 
-    public void hitButton(View v) {
+        this.intent = new Intent(this, RunActivity.class);
 
-        Intent intent = new Intent(this, RunActivity.class);
-        Button buttonInLayout = (Button)(findViewById(R.id.buttonStart));
-
-
-
+        //get text from the layout textview as String
         EditText editText = (EditText) findViewById(R.id.timeText);
-        //has to be checked here for input mistakes!!!!!!!!!!!!!!!!!!!!--------!
-        InputControl inputControl = new InputControl();
-
         String timeText = editText.getText().toString();
 
-        if(inputControl.time(timeText)) {
+
+        InputControl inputControl = new InputControl();
+        if (inputControl.seqtimeCheck(timeText)) {
 
             intent.putExtra(EXTRA_TIME, timeText);
-            //put all the intent extras from options into the intent for runActivity
-            collectDTO(intent);
-                startActivity(intent);
+            //put all the intent extras from optionsActivty into intent for runActivity
+            collectDTO();
+            startActivity(intent);
         }
-
-
-
 
 
     }
 
+    /**
+     * Method to start optionactivty when pushed
+     *
+     * @param v standart parameter
+     */
     public void hitOption(View v) {
         Intent intent = new Intent(this, OptionsAcitvity.class);
-        Button buttonInLayout = (Button)(findViewById(R.id.buttonOptions));
-
         startActivity(intent);
 
 
     }
 
-    private void collectDTO(Intent intent) {
+    /**
+     * Method to collect the DTO input for the RunActivty from the Options
+     * Activty intent
+     */
+    private void collectDTO() {
 
         Intent intOpt = getIntent();
 
@@ -86,9 +92,9 @@ public class StartActivity extends AppCompatActivity{
     }
 
 
-
-
-
+    /**
+     * Method to prevent the App from creating history and switching back to options
+     */
     @Override
     public void onBackPressed() {
 

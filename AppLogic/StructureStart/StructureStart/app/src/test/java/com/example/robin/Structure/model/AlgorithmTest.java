@@ -10,12 +10,13 @@ import static org.junit.Assert.assertEquals;
 
 /**
  * Basic functional testing of the algorithm class
+ *
  */
 public class AlgorithmTest {
 
 
-    //check internal methods
-
+    //check internal methods (have to be public to be tested)
+/*
     @Test
     public void testLength() {
         Algorithm algorithm1 = new Algorithm(480000, 500, 7500, 4000, 0.5);
@@ -40,7 +41,7 @@ public class AlgorithmTest {
             int current = 0;
         for (int i = 0; i < 20; i++) {
 
-            current = algorithm1.upDownArray.get(i);
+            current = algorithm1.list.get(i);
             assertEquals(1,current);
         }
 
@@ -67,12 +68,12 @@ public class AlgorithmTest {
         int current = 0;
         for (int i = 20; i <= 39; i++) {
 
-            current = algorithm1.upDownArray.get(i);
+            current = algorithm1.list.get(i);
             assertEquals(0,current);
         }
 
     }
-
+*/
     @Test
     public void checkRatio05() {
         Algorithm algorithm1 = new Algorithm(480000, 500, 7500, 4000, 0.5);

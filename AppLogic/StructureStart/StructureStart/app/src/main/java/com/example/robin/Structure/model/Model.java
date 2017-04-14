@@ -19,15 +19,14 @@ public class Model {
      * Initiating Variables
      */
     private Paint backgroundPaint;
-    private  Paint linePaint;
-    private  Paint triangleUpPaint;
-    private  Paint triangleDownPaint;
-    private   Paint triangleUpLightPaint;
-    private   Paint triangleDownLightPaint;
+    private Paint linePaint;
+    private Paint triangleUpPaint;
+    private Paint triangleDownPaint;
+    private Paint triangleUpLightPaint;
+    private Paint triangleDownLightPaint;
 
     private Context context;
-   private boolean soundOn;
-
+    private boolean soundOn;
 
 
     private int soundVolume;
@@ -42,7 +41,20 @@ public class Model {
     private ViewEmpty viewEmpty;
 
 
-    public Model (Context context, Paint backgroundPaint, Paint linePaint, Paint trianglePaintUp, Paint trianglePaintDown, Paint triangleUpLightPaint, Paint triangleDownLightPaint, boolean sound, int soundVolume) {
+    /**
+     * Constructor
+     *
+     * @param context                should be a Activity
+     * @param backgroundPaint        paint for background color
+     * @param linePaint              paint for line paint
+     * @param trianglePaintUp        paint for triangle up
+     * @param trianglePaintDown      paint for triangle down
+     * @param triangleUpLightPaint   paint for light sequnze up
+     * @param triangleDownLightPaint paint for light sequenze down
+     * @param sound                  boolean if sound should be on
+     * @param soundVolume            frequency of the custom sound
+     */
+    public Model(Context context, Paint backgroundPaint, Paint linePaint, Paint trianglePaintUp, Paint trianglePaintDown, Paint triangleUpLightPaint, Paint triangleDownLightPaint, boolean sound, int soundVolume) {
 
         this.context = context;
         this.backgroundPaint = backgroundPaint;
@@ -58,6 +70,9 @@ public class Model {
     }
 
 
+    /**
+     * Creates the model with the values from constructor
+     */
     public void createModel() {
 
         //create Empty TriangleDown -> filled empty
@@ -67,7 +82,7 @@ public class Model {
         //create triangle up without fill
         triangleUp = new TriangleUp(context, backgroundPaint, linePaint, triangleUpPaint, triangleUpLightPaint, false);
         //create full triangle for light up sequenze
-        triangleLightUp = new TriangleUp(context, backgroundPaint, linePaint,triangleUpPaint,  triangleUpLightPaint, true);
+        triangleLightUp = new TriangleUp(context, backgroundPaint, linePaint, triangleUpPaint, triangleUpLightPaint, true);
         //empty view
         viewEmpty = new ViewEmpty(context, backgroundPaint);
 
@@ -94,7 +109,9 @@ public class Model {
         return triangleLightDown;
     }
 
-    public boolean getSoundStatus() { return soundOn;}
+    public boolean getSoundStatus() {
+        return soundOn;
+    }
 
     public int getSoundVolume() {
         return soundVolume;
