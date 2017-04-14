@@ -8,9 +8,9 @@
         android:label="TriangleApp"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:configChanges="keyboardHidden|orientation"
         android:theme="@style/AppTheme.NoActionBar">
         <activity android:name="com.example.robin.Structure.control.MainActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,6 +20,7 @@
         <activity
             android:name="com.example.robin.Structure.view.RunActivity"
             android:label="@string/title_activity_run"
+            android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".view.OptionsActivity"
@@ -27,5 +28,7 @@
         <activity android:name="com.example.robin.Structure.view.OptionsAcitvity" />
         <activity android:name="com.example.robin.Structure.view.StartActivity"></activity>
     </application>
+
+
 
 </manifest>

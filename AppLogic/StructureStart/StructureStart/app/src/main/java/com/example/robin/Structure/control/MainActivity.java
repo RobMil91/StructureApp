@@ -25,6 +25,13 @@ public class MainActivity extends AppCompatActivity {
       //  Manage manager = new Manage();
        // OptionsAcitvity optAct = new OptionsAcitvity(manager);
 
+   //     RunApplication runApp = new RunApplication();
+
+      //  Intent intAppli = new Intent(this, RunApplication.class);
+
+     //  startActivity(intAppli);
+
+
 
 
         Intent intent = new Intent(this, StartActivity.class);

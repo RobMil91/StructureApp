@@ -53,12 +53,7 @@ public class StartActivity extends AppCompatActivity{
             intent.putExtra(EXTRA_TIME, timeText);
             //put all the intent extras from options into the intent for runActivity
             collectDTO(intent);
-
-
-            synchronized (this) {
                 startActivity(intent);
-            }
-
         }
 
 
